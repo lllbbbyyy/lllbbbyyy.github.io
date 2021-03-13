@@ -77,7 +77,7 @@
 
 
 
-  <meta name="keywords" content="算法,模板," />
+  <meta name="keywords" content="Hexo, NexT" />
 
 
 
@@ -88,17 +88,15 @@
 
 
 
-<meta name="description" content="其实二分答案思路很简单。。。本不应该有这篇文章的，可是在做题的时候发现还是有一些细节，时间长了容易忘记，所以还是写了这篇文章，方便后续查找。  整数二分  求较大区间的最小临界值 12345678910111213while (l &lt; r)&amp;#123;    int mid &#x3D; (l + r) &#x2F; 2;    if (check(mid))    &amp;#123;        r &#x3D; mid;">
+<meta name="description" content="今天是以2020ICPC南京站作为训练题目，这篇文章主要是对做的题的一个总结以及对于一些差一点做出来题的一个补题。题目顺序是按照个人角度的难度顺序来排的，包括在训练时做的顺序等等。   K. K Co-prime Permutation  题目大意 给定两个数n(1≤n≤106)n(1\le n \le 10^6)n(1≤n≤106)，k(0≤k≤n)k(0 \le k \le n)k(0≤k≤n">
 <meta property="og:type" content="article">
-<meta property="og:title" content="【模板】二分答案（3个）">
-<meta property="og:url" content="http://yoursite.com/%E3%80%90%E6%A8%A1%E6%9D%BF%E3%80%91%E4%BA%8C%E5%88%86%E7%AD%94%E6%A1%88%EF%BC%883%E4%B8%AA%EF%BC%89/index.html">
+<meta property="og:title" content="2020ICPC南京站训练部分题解+补题">
+<meta property="og:url" content="http://yoursite.com/2020ICPC%E5%8D%97%E4%BA%AC%E7%AB%99%E8%AE%AD%E7%BB%83%E9%83%A8%E5%88%86%E9%A2%98%E8%A7%A3-%E8%A1%A5%E9%A2%98/index.html">
 <meta property="og:site_name" content="llbbyy">
-<meta property="og:description" content="其实二分答案思路很简单。。。本不应该有这篇文章的，可是在做题的时候发现还是有一些细节，时间长了容易忘记，所以还是写了这篇文章，方便后续查找。  整数二分  求较大区间的最小临界值 12345678910111213while (l &lt; r)&amp;#123;    int mid &#x3D; (l + r) &#x2F; 2;    if (check(mid))    &amp;#123;        r &#x3D; mid;">
-<meta property="article:published_time" content="2021-01-30T08:24:00.000Z">
-<meta property="article:modified_time" content="2021-01-30T08:38:45.628Z">
+<meta property="og:description" content="今天是以2020ICPC南京站作为训练题目，这篇文章主要是对做的题的一个总结以及对于一些差一点做出来题的一个补题。题目顺序是按照个人角度的难度顺序来排的，包括在训练时做的顺序等等。   K. K Co-prime Permutation  题目大意 给定两个数n(1≤n≤106)n(1\le n \le 10^6)n(1≤n≤106)，k(0≤k≤n)k(0 \le k \le n)k(0≤k≤n">
+<meta property="article:published_time" content="2021-03-13T13:53:00.000Z">
+<meta property="article:modified_time" content="2021-03-13T17:09:34.144Z">
 <meta property="article:author" content="llbbyy">
-<meta property="article:tag" content="算法">
-<meta property="article:tag" content="模板">
 <meta name="twitter:card" content="summary">
 
 
@@ -129,13 +127,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/【模板】二分答案（3个）/"/>
+  <link rel="canonical" href="http://yoursite.com/2020ICPC南京站训练部分题解-补题/"/>
 
 
 
 <link href="https://cdn.jsdelivr.net/npm/katex@0.10.0/dist/katex.min.css" rel="stylesheet">
 
-  <title>【模板】二分答案（3个） | llbbyy</title>
+  <title>2020ICPC南京站训练部分题解+补题 | llbbyy</title>
   
 
 
@@ -295,7 +293,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/%E3%80%90%E6%A8%A1%E6%9D%BF%E3%80%91%E4%BA%8C%E5%88%86%E7%AD%94%E6%A1%88%EF%BC%883%E4%B8%AA%EF%BC%89/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020ICPC%E5%8D%97%E4%BA%AC%E7%AB%99%E8%AE%AD%E7%BB%83%E9%83%A8%E5%88%86%E9%A2%98%E8%A7%A3-%E8%A1%A5%E9%A2%98/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="llbbyy">
@@ -312,7 +310,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">【模板】二分答案（3个）</h1>
+          <h1 class="post-title" itemprop="name headline">2020ICPC南京站训练部分题解+补题</h1>
         
 
         <div class="post-meta">
@@ -324,8 +322,8 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-01-30T16:24:00+08:00">
-                2021-01-30
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2021-03-13T21:53:00+08:00">
+                2021-03-13
               </time>
             
 
@@ -335,28 +333,6 @@
           </span>
 
           
-            <span class="post-category" >
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%90%86%E8%AE%BA%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index">
-                    <span itemprop="name">理论学习</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
 
           
             
@@ -365,8 +341,8 @@
                 <span class="post-meta-item-icon">
                   <i class="fa fa-comment-o"></i>
                 </span>
-                <a href="/%E3%80%90%E6%A8%A1%E6%9D%BF%E3%80%91%E4%BA%8C%E5%88%86%E7%AD%94%E6%A1%88%EF%BC%883%E4%B8%AA%EF%BC%89/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/%E3%80%90%E6%A8%A1%E6%9D%BF%E3%80%91%E4%BA%8C%E5%88%86%E7%AD%94%E6%A1%88%EF%BC%883%E4%B8%AA%EF%BC%89/" itemprop="commentCount"></span>
+                <a href="/2020ICPC%E5%8D%97%E4%BA%AC%E7%AB%99%E8%AE%AD%E7%BB%83%E9%83%A8%E5%88%86%E9%A2%98%E8%A7%A3-%E8%A1%A5%E9%A2%98/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2020ICPC%E5%8D%97%E4%BA%AC%E7%AB%99%E8%AE%AD%E7%BB%83%E9%83%A8%E5%88%86%E9%A2%98%E8%A7%A3-%E8%A1%A5%E9%A2%98/" itemprop="commentCount"></span>
                 </a>
               </span>
             
@@ -393,7 +369,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  263 字
+                  1.1k 字
                 </span>
               
 
@@ -409,7 +385,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  1 分钟
+                  4 分钟
                 </span>
               
             </div>
@@ -430,16 +406,24 @@
       
 
       
-        <p>其实二分答案思路很简单。。。本不应该有这篇文章的，可是在做题的时候发现还是有一些细节，时间长了容易忘记，所以还是写了这篇文章，方便后续查找。</p>
-<h1 id="整数二分"><a class="markdownIt-Anchor" href="#整数二分"></a> 整数二分</h1>
-<h2 id="求较大区间的最小临界值"><a class="markdownIt-Anchor" href="#求较大区间的最小临界值"></a> 求较大区间的最小临界值</h2>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> (l &lt; r)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">int</span> mid = (l + r) / <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">if</span> (check(mid))</span><br><span class="line">    &#123;</span><br><span class="line">        r = mid;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        l = mid + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">int</span> ans = l;</span><br></pre></td></tr></table></figure>
-<h2 id="求较小区间的最大临界值"><a class="markdownIt-Anchor" href="#求较小区间的最大临界值"></a> 求较小区间的最大临界值</h2>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> (l &lt; r)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">int</span> mid = (l + r + <span class="number">1</span>) / <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">if</span> (check(mid))</span><br><span class="line">    &#123;</span><br><span class="line">        l = mid;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        r = mid - <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">int</span> ans = l;</span><br></pre></td></tr></table></figure>
-<h1 id="浮点二分"><a class="markdownIt-Anchor" href="#浮点二分"></a> 浮点二分</h1>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> (<span class="built_in">fabs</span>(r - l) &gt; eps)</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">double</span> mid = (l + r) / <span class="number">2</span>;</span><br><span class="line">    <span class="keyword">if</span> (check(mid))</span><br><span class="line">    &#123;</span><br><span class="line">        r = mid;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;</span><br><span class="line">        l = mid;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">int</span> ans = l;</span><br></pre></td></tr></table></figure>
-<p>主要的要点就是在整数二分的时候，都是令else的部分多加一个或者多减一个（至于是l还是r、加还是减可以通过语义判断），如果是下半区间的话，计算mid时需要上取整。</p>
-<p>浮点二分基本上随便写了，注意用精度比较即可。</p>
+        <p>今天是以2020ICPC南京站作为训练题目，这篇文章主要是对做的题的一个总结以及对于一些差一点做出来题的一个补题。题目顺序是按照个人角度的难度顺序来排的，包括在训练时做的顺序等等。</p>
+<hr />
+<h1 id="k-k-co-prime-permutation"><a class="markdownIt-Anchor" href="#k-k-co-prime-permutation"></a> <a href="http://codeforces.com/gym/102992/problem/K" target="_blank" rel="noopener">K. K Co-prime Permutation</a></h1>
+<h2 id="题目大意"><a class="markdownIt-Anchor" href="#题目大意"></a> 题目大意</h2>
+<p>给定两个数<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo stretchy="false">(</mo><mn>1</mn><mo>≤</mo><mi>n</mi><mo>≤</mo><mn>1</mn><msup><mn>0</mn><mn>6</mn></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">n(1\le n \le 10^6)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">n</span><span class="mopen">(</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">6</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>，<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>k</mi><mo stretchy="false">(</mo><mn>0</mn><mo>≤</mo><mi>k</mi><mo>≤</mo><mi>n</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">k(0 \le k \le n)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mopen">(</span><span class="mord">0</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.83041em;vertical-align:-0.13597em;"></span><span class="mord mathdefault" style="margin-right:0.03148em;">k</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">n</span><span class="mclose">)</span></span></span></span>，要求找到一个从1到n的排列，使得这个排列在第i个位置上的数（从1开始）<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>p</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">p_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault">p</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>，恰好有k个i与<span class="katex"><span class="katex-mathml"><math><semantics><mrow><msub><mi>p</mi><mi>i</mi></msub></mrow><annotation encoding="application/x-tex">p_i</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.625em;vertical-align:-0.19444em;"></span><span class="mord"><span class="mord mathdefault">p</span><span class="msupsub"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height:0.31166399999999994em;"><span style="top:-2.5500000000000003em;margin-left:0em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mathdefault mtight">i</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height:0.15em;"><span></span></span></span></span></span></span></span></span></span>互质，如果不存在输出-1。</p>
+<h2 id="思路"><a class="markdownIt-Anchor" href="#思路"></a> 思路</h2>
+<p>签到题，实际上是找到一个从1到n的排列，与从1到n的顺排列相应的位置上恰好有k个数互质。这个实际上是考察了一个互质的性质：<strong>相邻的两个数一定互质</strong>。因此我们可以恰好使前k个数错一位，后面的n-k个数原样输出即可，复杂度是线性的。</p>
+<h2 id="代码"><a class="markdownIt-Anchor" href="#代码"></a> 代码</h2>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> n, k;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ios::sync_with_stdio(<span class="number">0</span>);</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; k;</span><br><span class="line">    <span class="keyword">if</span> (k == <span class="number">0</span>)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="number">-1</span>;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> cnt = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= n; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (cnt &lt; k)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (i != <span class="number">1</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="built_in">cout</span> &lt;&lt; <span class="string">' '</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span> (i == k)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="built_in">cout</span> &lt;&lt; <span class="number">1</span>;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">                <span class="built_in">cout</span> &lt;&lt; i + <span class="number">1</span>;</span><br><span class="line">            cnt++;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="string">' '</span>;</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; i;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr />
+<h1 id="l-lets-play-curling"><a class="markdownIt-Anchor" href="#l-lets-play-curling"></a> <a href="http://codeforces.com/gym/102992/problem/L" target="_blank" rel="noopener">L. Let’s Play Curling</a></h1>
+<h2 id="题目大意-2"><a class="markdownIt-Anchor" href="#题目大意-2"></a> 题目大意</h2>
+<p>有红蓝两个队，分别有<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo separator="true">,</mo><mi>m</mi><mo stretchy="false">(</mo><mn>1</mn><mo>≤</mo><mi>n</mi><mi mathvariant="normal">.</mi><mi>m</mi><mo>≤</mo><mn>1</mn><msup><mn>0</mn><mn>5</mn></msup><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">n,m(1\le n.m \le 10^5)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">n</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">m</span><span class="mopen">(</span><span class="mord">1</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:0.7719400000000001em;vertical-align:-0.13597em;"></span><span class="mord mathdefault">n</span><span class="mord">.</span><span class="mord mathdefault">m</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">≤</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1.064108em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">5</span></span></span></span></span></span></span></span><span class="mclose">)</span></span></span></span>（n,m的分别总和不超过<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mn>5</mn><mi>X</mi><mn>1</mn><msup><mn>0</mn><mn>5</mn></msup></mrow><annotation encoding="application/x-tex">5X10^5</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8141079999999999em;vertical-align:0em;"></span><span class="mord">5</span><span class="mord mathdefault" style="margin-right:0.07847em;">X</span><span class="mord">1</span><span class="mord"><span class="mord">0</span><span class="msupsub"><span class="vlist-t"><span class="vlist-r"><span class="vlist" style="height:0.8141079999999999em;"><span style="top:-3.063em;margin-right:0.05em;"><span class="pstrut" style="height:2.7em;"></span><span class="sizing reset-size6 size3 mtight"><span class="mord mtight">5</span></span></span></span></span></span></span></span></span></span></span>）颗球分布在一维坐标系上。需要找到一个坐标点c（可以是浮点数），当红队存在球，该球到坐标点c的距离小于蓝队所有球到点c的距离时，红队获胜，且得分为红队存在的这种类型的球的数量。问红队的最高得分是多少。</p>
+<h2 id="思路-2"><a class="markdownIt-Anchor" href="#思路-2"></a> 思路</h2>
+<p>从样例可以看出，同时也比较显然的贪心，那就是如果对两个蓝队之间有一些红队的球，那么将这个坐标点定为两个蓝队球的中点，那么两个点中间的红队的球到该坐标点的距离一定小于两个蓝队球到中心点的距离，因此这种情况所有两个蓝队球之间的红队球都能产生贡献（不包括重合的端点），也是最好的情况。因此可以对于蓝队球与红队球的坐标进行排序，去遍历蓝队的球，用一个指针标记此时扫描到的红队球的下标，去找到每两个蓝队球之间的红队球的个数（如果两个蓝队球坐标相差不大于1，必定没有），找到其中的最大值，便是答案。有一个需要注意的陷阱就是，这个最大情况可能出现在序列的两端，即红队有一些球在蓝队最左边坐标的左边，那么c只要设置到红队最左边球的左边，那么蓝队最左边的那些红队球都会产生贡献。右边同理。在计算完两个相邻的蓝队球以后记得处理两边即可。复杂度排序是<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mi>log</mi><mo>⁡</mo><mi>n</mi></mrow><annotation encoding="application/x-tex">n\log n</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.8888799999999999em;vertical-align:-0.19444em;"></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">n</span></span></span></span>，遍历寻找是<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>n</mi><mo>+</mo><mi>m</mi></mrow><annotation encoding="application/x-tex">n+m</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:0.66666em;vertical-align:-0.08333em;"></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.43056em;vertical-align:0em;"></span><span class="mord mathdefault">m</span></span></span></span>，最后的复杂度应该是<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>m</mi><mi>a</mi><mi>x</mi><mo stretchy="false">(</mo><mi>n</mi><mi>log</mi><mo>⁡</mo><mi>n</mi><mo separator="true">,</mo><mi>m</mi><mi>log</mi><mo>⁡</mo><mi>m</mi><mo separator="true">,</mo><mi>n</mi><mo>+</mo><mi>m</mi><mo stretchy="false">)</mo></mrow><annotation encoding="application/x-tex">max(n\log n,m\log m,n+m)</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">m</span><span class="mord mathdefault">a</span><span class="mord mathdefault">x</span><span class="mopen">(</span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">n</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">m</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mop">lo<span style="margin-right:0.01389em;">g</span></span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">m</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault">n</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">m</span><span class="mclose">)</span></span></span></span></p>
+<h2 id="代码-2"><a class="markdownIt-Anchor" href="#代码-2"></a> 代码</h2>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;bits/stdc++.h&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> t;</span><br><span class="line"><span class="keyword">constexpr</span> <span class="keyword">int</span> maxn = <span class="number">1e5</span> + <span class="number">10</span>;</span><br><span class="line"><span class="keyword">int</span> a[maxn];</span><br><span class="line"><span class="keyword">int</span> b[maxn];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ios::sync_with_stdio(<span class="number">0</span>);</span><br><span class="line">    <span class="built_in">cin</span> &gt;&gt; t;</span><br><span class="line">    <span class="keyword">int</span> n, m;</span><br><span class="line">    <span class="keyword">while</span> (t--)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="built_in">cin</span> &gt;&gt; n &gt;&gt; m;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; n; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cin</span> &gt;&gt; a[i];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; m; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cin</span> &gt;&gt; b[j];</span><br><span class="line">        &#125;</span><br><span class="line">        sort(a, a + n);</span><br><span class="line">        sort(b, b + m);</span><br><span class="line">        <span class="keyword">int</span> j = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt; m; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (b[i] - b[i - <span class="number">1</span>] &gt; <span class="number">1</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">int</span> now_ans = <span class="number">0</span>;</span><br><span class="line">                <span class="keyword">while</span> (j &lt; n &amp;&amp; a[j] &lt; b[i])</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="keyword">if</span> (a[j] &gt; b[i - <span class="number">1</span>])</span><br><span class="line">                        now_ans++;</span><br><span class="line">                    j++;</span><br><span class="line">                &#125;</span><br><span class="line">                ans = max(ans, now_ans);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        j = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> now_ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (j &lt; n &amp;&amp; a[j] &lt; b[<span class="number">0</span>])</span><br><span class="line">        &#123;</span><br><span class="line">            now_ans++;</span><br><span class="line">            j++;</span><br><span class="line">        &#125;</span><br><span class="line">        ans = max(ans, now_ans);</span><br><span class="line">        j = n - <span class="number">1</span>;</span><br><span class="line">        now_ans = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">while</span> (j &gt;= <span class="number">0</span> &amp;&amp; a[j] &gt; b[m - <span class="number">1</span>])</span><br><span class="line">        &#123;</span><br><span class="line">            now_ans++;</span><br><span class="line">            j--;</span><br><span class="line">        &#125;</span><br><span class="line">        ans = max(ans, now_ans);</span><br><span class="line">        <span class="keyword">if</span> (ans == <span class="number">0</span>)</span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; <span class="string">"Impossible"</span> &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="built_in">cout</span> &lt;&lt; ans &lt;&lt; <span class="string">'\n'</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr />
 
       
     </div>
@@ -455,14 +439,6 @@
 
     <footer class="post-footer">
       
-        <div class="post-tags">
-          
-            <a href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"># 算法</a>
-          
-            <a href="/tags/%E6%A8%A1%E6%9D%BF/" rel="tag"># 模板</a>
-          
-        </div>
-      
 
       
       
@@ -472,8 +448,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/Educational-Codeforces-Round-103%E2%80%94%E2%80%942021-1-29/" rel="next" title="Educational Codeforces Round 103——2021/1/29">
-                <i class="fa fa-chevron-left"></i> Educational Codeforces Round 103——2021/1/29
+              <a href="/%E3%80%90%E6%A8%A1%E6%9D%BF%E3%80%91%E4%BA%8C%E5%88%86%E7%AD%94%E6%A1%88%EF%BC%883%E4%B8%AA%EF%BC%89/" rel="next" title="【模板】二分答案（3个）">
+                <i class="fa fa-chevron-left"></i> 【模板】二分答案（3个）
               </a>
             
           </div>
@@ -481,10 +457,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2020ICPC%E5%8D%97%E4%BA%AC%E7%AB%99%E8%AE%AD%E7%BB%83%E9%83%A8%E5%88%86%E9%A2%98%E8%A7%A3-%E8%A1%A5%E9%A2%98/" rel="prev" title="2020ICPC南京站训练部分题解+补题">
-                2020ICPC南京站训练部分题解+补题 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -633,7 +605,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#整数二分"><span class="nav-number">1.</span> <span class="nav-text"> 整数二分</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#求较大区间的最小临界值"><span class="nav-number">1.1.</span> <span class="nav-text"> 求较大区间的最小临界值</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#求较小区间的最大临界值"><span class="nav-number">1.2.</span> <span class="nav-text"> 求较小区间的最大临界值</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#浮点二分"><span class="nav-number">2.</span> <span class="nav-text"> 浮点二分</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#k-k-co-prime-permutation"><span class="nav-number">1.</span> <span class="nav-text"> K. K Co-prime Permutation</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目大意"><span class="nav-number">1.1.</span> <span class="nav-text"> 题目大意</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#思路"><span class="nav-number">1.2.</span> <span class="nav-text"> 思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码"><span class="nav-number">1.3.</span> <span class="nav-text"> 代码</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#l-lets-play-curling"><span class="nav-number">2.</span> <span class="nav-text"> L. Let’s Play Curling</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#题目大意-2"><span class="nav-number">2.1.</span> <span class="nav-text"> 题目大意</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#思路-2"><span class="nav-number">2.2.</span> <span class="nav-text"> 思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#代码-2"><span class="nav-number">2.3.</span> <span class="nav-text"> 代码</span></a></li></ol></li></ol></div>
             
 
           </div>
