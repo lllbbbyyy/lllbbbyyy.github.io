@@ -77,7 +77,7 @@
 
 
 
-  <meta name="keywords" content="题解,Codeforces,算法," />
+  <meta name="keywords" content="题解,算法,Codeforces," />
 
 
 
@@ -100,8 +100,8 @@
 <meta property="article:modified_time" content="2022-02-23T16:31:49.632Z">
 <meta property="article:author" content="llbbyy">
 <meta property="article:tag" content="题解">
-<meta property="article:tag" content="Codeforces">
 <meta property="article:tag" content="算法">
+<meta property="article:tag" content="Codeforces">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://yoursite.com/images/pasted-3.png">
 
@@ -364,16 +364,6 @@
 
           
             
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/Educational-Codeforces-Round-103%E2%80%94%E2%80%942021-1-29/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/Educational-Codeforces-Round-103%E2%80%94%E2%80%942021-1-29/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
           
 
           
@@ -544,9 +534,9 @@
           
             <a href="/tags/%E9%A2%98%E8%A7%A3/" rel="tag"># 题解</a>
           
-            <a href="/tags/Codeforces/" rel="tag"># Codeforces</a>
-          
             <a href="/tags/%E7%AE%97%E6%B3%95/" rel="tag"># 算法</a>
+          
+            <a href="/tags/Codeforces/" rel="tag"># Codeforces</a>
           
         </div>
       
@@ -604,6 +594,7 @@
     <div class="comments" id="comments">
     </div>
   
+
 
 
 
@@ -948,28 +939,23 @@
 
 
 
-  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-  
-  <script type="text/javascript">
-    var GUEST = ['nick','mail','link'];
-    var guest = 'nick,mail,link';
-    guest = guest.split(',').filter(item=>{
-      return GUEST.indexOf(item)>-1;
-    });
-    new Valine({
-        el: '#comments' ,
-        verify: false,
-        notify: false,
-        appId: 'v5lylRy1PSdHOPHbMqjGNf4o-gzGzoHsz',
-        appKey: '7Lw25GVYWMHV1bH5dfwqqPQW',
-        placeholder: '=w=大家可以在评论框上方加上自己的昵称方便辨认哦。',
-        avatar:'mm',
-        guest_info:guest,
-        pageSize:'10' || 10,
-    });
-  </script>
 
+
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+  <div id="gitalk-container"></div>
+  <script type="text/javascript">
+    var gitalk = new Gitalk({
+      clientID: 'aefc42375af2632bb485',
+      clientSecret: 'c053c08aaa6c5281079eb0c9439b5d00312fa681',
+      repo: 'blog_comment',
+      owner: 'lllbbbyyy',
+      admin: ['lllbbbyyy'],
+      id: location.pathname,
+      distractionFreeMode: 'false'
+    })
+    gitalk.render('gitalk-container')
+  </script>
 
 
   

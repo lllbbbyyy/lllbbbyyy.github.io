@@ -360,16 +360,6 @@
 
           
             
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/%E6%8E%92%E5%BA%8F%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%B8%AA%E5%B0%8F%E9%99%B7%E9%98%B1/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/%E6%8E%92%E5%BA%8F%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%B8%AA%E5%B0%8F%E9%99%B7%E9%98%B1/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
           
 
           
@@ -522,6 +512,7 @@ a &gt;= b：!(a &lt; b)</p>
     <div class="comments" id="comments">
     </div>
   
+
 
 
 
@@ -841,28 +832,23 @@ a &gt;= b：!(a &lt; b)</p>
 
 
 
-  <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
-  <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
-  
-  <script type="text/javascript">
-    var GUEST = ['nick','mail','link'];
-    var guest = 'nick,mail,link';
-    guest = guest.split(',').filter(item=>{
-      return GUEST.indexOf(item)>-1;
-    });
-    new Valine({
-        el: '#comments' ,
-        verify: false,
-        notify: false,
-        appId: 'v5lylRy1PSdHOPHbMqjGNf4o-gzGzoHsz',
-        appKey: '7Lw25GVYWMHV1bH5dfwqqPQW',
-        placeholder: '=w=大家可以在评论框上方加上自己的昵称方便辨认哦。',
-        avatar:'mm',
-        guest_info:guest,
-        pageSize:'10' || 10,
-    });
-  </script>
 
+
+  <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+  <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+  <div id="gitalk-container"></div>
+  <script type="text/javascript">
+    var gitalk = new Gitalk({
+      clientID: 'aefc42375af2632bb485',
+      clientSecret: 'c053c08aaa6c5281079eb0c9439b5d00312fa681',
+      repo: 'blog_comment',
+      owner: 'lllbbbyyy',
+      admin: ['lllbbbyyy'],
+      id: location.pathname,
+      distractionFreeMode: 'false'
+    })
+    gitalk.render('gitalk-container')
+  </script>
 
 
   
