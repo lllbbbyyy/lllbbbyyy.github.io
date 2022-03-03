@@ -15,10 +15,10 @@
 <p>Or if you’re not into package management, just <a href="https://github.com/zenorocha/clipboard.js/archive/master.zip" target="_blank" rel="noopener">download a ZIP</a> file.</p>
 <h2 id="setup"><a class="markdownIt-Anchor" href="#setup"></a> Setup</h2>
 <p>First, include the script located on the <code>dist</code> folder or load it from <a href="https://github.com/zenorocha/clipboard.js/wiki/CDN-Providers" target="_blank" rel="noopener">a third-party CDN provider</a>.</p>
-<pre class="highlight"><code class="html"><span class="hljs-tag">&lt;<span class="hljs-name">script</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"dist/clipboard.min.js"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">script</span>&gt;</span>
+<pre class="highlight"><code class="html"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">"dist/clipboard.min.js"</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span>
 </code></pre>
 <p>Now, you need to instantiate it by <a href="https://github.com/zenorocha/clipboard.js/blob/master/demo/constructor-selector.html#L18" target="_blank" rel="noopener">passing a DOM selector</a>, <a href="https://github.com/zenorocha/clipboard.js/blob/master/demo/constructor-node.html#L16-L17" target="_blank" rel="noopener">HTML element</a>, or <a href="https://github.com/zenorocha/clipboard.js/blob/master/demo/constructor-nodelist.html#L18-L19" target="_blank" rel="noopener">list of HTML elements</a>.</p>
-<pre class="highlight"><code class="js"><span class="hljs-keyword">new</span> ClipboardJS(<span class="hljs-string">'.btn'</span>);
+<pre class="highlight"><code class="js"><span class="keyword">new</span> ClipboardJS(<span class="string">'.btn'</span>);
 </code></pre>
 <p>Internally, we need to fetch all elements that matches with your selector and attach event listeners for each one. But guess what? If you have hundreds of matches, this operation can consume a lot of memory.</p>
 <p>For this reason we use <a href="https://stackoverflow.com/questions/1687296/what-is-dom-event-delegation" target="_blank" rel="noopener">event delegation</a> which replaces multiple event listeners with just a single listener. After all, <a href="https://twitter.com/hashtag/perfmatters" target="_blank" rel="noopener">#perfmatters</a>.</p>
@@ -28,51 +28,51 @@
 <p>A pretty common use case is to copy content from another element. You can do that by adding a <code>data-clipboard-target</code> attribute in your trigger element.</p>
 <p>The value you include on this attribute needs to match another’s element selector.</p>
 <p><a href="https://clipboardjs.com/#example-target" target="_blank" rel="noopener"><img width="473" alt="example-2" src="https://cloud.githubusercontent.com/assets/398893/9983467/a4946aaa-5fb1-11e5-9780-f09fcd7ca6c8.png"></a></p>
-<pre class="highlight"><code class="html"><span class="hljs-comment">&lt;!-- Target --&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"foo"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"https://github.com/zenorocha/clipboard.js.git"</span>&gt;</span>
+<pre class="highlight"><code class="html"><span class="comment">&lt;!-- Target --&gt;</span>
+<span class="tag">&lt;<span class="name">input</span> <span class="attr">id</span>=<span class="string">"foo"</span> <span class="attr">value</span>=<span class="string">"https://github.com/zenorocha/clipboard.js.git"</span>&gt;</span>
 
-<span class="hljs-comment">&lt;!-- Trigger --&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn"</span> <span class="hljs-attr">data-clipboard-target</span>=<span class="hljs-string">"#foo"</span>&gt;</span>
-    <span class="hljs-tag">&lt;<span class="hljs-name">img</span> <span class="hljs-attr">src</span>=<span class="hljs-string">"assets/clippy.svg"</span> <span class="hljs-attr">alt</span>=<span class="hljs-string">"Copy to clipboard"</span>&gt;</span>
-<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="comment">&lt;!-- Trigger --&gt;</span>
+<span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"btn"</span> <span class="attr">data-clipboard-target</span>=<span class="string">"#foo"</span>&gt;</span>
+    <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"assets/clippy.svg"</span> <span class="attr">alt</span>=<span class="string">"Copy to clipboard"</span>&gt;</span>
+<span class="tag">&lt;/<span class="name">button</span>&gt;</span>
 </code></pre>
 <h3 id="cut-text-from-another-element"><a class="markdownIt-Anchor" href="#cut-text-from-another-element"></a> Cut text from another element</h3>
 <p>Additionally, you can define a <code>data-clipboard-action</code> attribute to specify if you want to either <code>copy</code> or <code>cut</code> content.</p>
 <p>If you omit this attribute, <code>copy</code> will be used by default.</p>
 <p><a href="https://clipboardjs.com/#example-action" target="_blank" rel="noopener"><img width="473" alt="example-3" src="https://cloud.githubusercontent.com/assets/398893/10000358/7df57b9c-6050-11e5-9cd1-fbc51d2fd0a7.png"></a></p>
-<pre class="highlight"><code class="html"><span class="hljs-comment">&lt;!-- Target --&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">textarea</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"bar"</span>&gt;</span>Mussum ipsum cacilds...<span class="hljs-tag">&lt;/<span class="hljs-name">textarea</span>&gt;</span>
+<pre class="highlight"><code class="html"><span class="comment">&lt;!-- Target --&gt;</span>
+<span class="tag">&lt;<span class="name">textarea</span> <span class="attr">id</span>=<span class="string">"bar"</span>&gt;</span>Mussum ipsum cacilds...<span class="tag">&lt;/<span class="name">textarea</span>&gt;</span>
 
-<span class="hljs-comment">&lt;!-- Trigger --&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn"</span> <span class="hljs-attr">data-clipboard-action</span>=<span class="hljs-string">"cut"</span> <span class="hljs-attr">data-clipboard-target</span>=<span class="hljs-string">"#bar"</span>&gt;</span>
+<span class="comment">&lt;!-- Trigger --&gt;</span>
+<span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"btn"</span> <span class="attr">data-clipboard-action</span>=<span class="string">"cut"</span> <span class="attr">data-clipboard-target</span>=<span class="string">"#bar"</span>&gt;</span>
     Cut to clipboard
-<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="tag">&lt;/<span class="name">button</span>&gt;</span>
 </code></pre>
 <p>As you may expect, the <code>cut</code> action only works on <code>&lt;input&gt;</code> or <code>&lt;textarea&gt;</code> elements.</p>
 <h3 id="copy-text-from-attribute"><a class="markdownIt-Anchor" href="#copy-text-from-attribute"></a> Copy text from attribute</h3>
 <p>Truth is, you don’t even need another element to copy its content from. You can just include a <code>data-clipboard-text</code> attribute in your trigger element.</p>
 <p><a href="https://clipboardjs.com/#example-text" target="_blank" rel="noopener"><img width="147" alt="example-1" src="https://cloud.githubusercontent.com/assets/398893/10000347/6e16cf8c-6050-11e5-9883-1c5681f9ec45.png"></a></p>
-<pre class="highlight"><code class="html"><span class="hljs-comment">&lt;!-- Trigger --&gt;</span>
-<span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">class</span>=<span class="hljs-string">"btn"</span> <span class="hljs-attr">data-clipboard-text</span>=<span class="hljs-string">"Just because you can doesn't mean you should — clipboard.js"</span>&gt;</span>
+<pre class="highlight"><code class="html"><span class="comment">&lt;!-- Trigger --&gt;</span>
+<span class="tag">&lt;<span class="name">button</span> <span class="attr">class</span>=<span class="string">"btn"</span> <span class="attr">data-clipboard-text</span>=<span class="string">"Just because you can doesn't mean you should — clipboard.js"</span>&gt;</span>
     Copy to clipboard
-<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span>
+<span class="tag">&lt;/<span class="name">button</span>&gt;</span>
 </code></pre>
 <h2 id="events"><a class="markdownIt-Anchor" href="#events"></a> Events</h2>
 <p>There are cases where you’d like to show some user feedback or capture what has been selected after a copy/cut operation.</p>
 <p>That’s why we fire custom events such as <code>success</code> and <code>error</code> for you to listen and implement your custom logic.</p>
-<pre class="highlight"><code class="js"><span class="hljs-keyword">var</span> clipboard = <span class="hljs-keyword">new</span> ClipboardJS(<span class="hljs-string">'.btn'</span>);
+<pre class="highlight"><code class="js"><span class="keyword">var</span> clipboard = <span class="keyword">new</span> ClipboardJS(<span class="string">'.btn'</span>);
 
-clipboard.on(<span class="hljs-string">'success'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>) </span>{
-    <span class="hljs-built_in">console</span>.info(<span class="hljs-string">'Action:'</span>, e.action);
-    <span class="hljs-built_in">console</span>.info(<span class="hljs-string">'Text:'</span>, e.text);
-    <span class="hljs-built_in">console</span>.info(<span class="hljs-string">'Trigger:'</span>, e.trigger);
+clipboard.on(<span class="string">'success'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>{
+    <span class="built_in">console</span>.info(<span class="string">'Action:'</span>, e.action);
+    <span class="built_in">console</span>.info(<span class="string">'Text:'</span>, e.text);
+    <span class="built_in">console</span>.info(<span class="string">'Trigger:'</span>, e.trigger);
 
     e.clearSelection();
 });
 
-clipboard.on(<span class="hljs-string">'error'</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">e</span>) </span>{
-    <span class="hljs-built_in">console</span>.error(<span class="hljs-string">'Action:'</span>, e.action);
-    <span class="hljs-built_in">console</span>.error(<span class="hljs-string">'Trigger:'</span>, e.trigger);
+clipboard.on(<span class="string">'error'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>{
+    <span class="built_in">console</span>.error(<span class="string">'Action:'</span>, e.action);
+    <span class="built_in">console</span>.error(<span class="string">'Trigger:'</span>, e.trigger);
 });
 </code></pre>
 <p>For a live demonstration, go to this <a href="https://clipboardjs.com/" target="_blank" rel="noopener">site</a> and open your console.</p>
@@ -82,26 +82,26 @@ clipboard.on(<span class="hljs-string">'error'</span>, <span class="hljs-functio
 <h2 id="advanced-options"><a class="markdownIt-Anchor" href="#advanced-options"></a> Advanced Options</h2>
 <p>If you don’t want to modify your HTML, there’s a pretty handy imperative API for you to use. All you need to do is declare a function, do your thing, and return a value.</p>
 <p>For instance, if you want to dynamically set a <code>target</code>, you’ll need to return a Node.</p>
-<pre class="highlight"><code class="js"><span class="hljs-keyword">new</span> ClipboardJS(<span class="hljs-string">'.btn'</span>, {
-    <span class="hljs-attr">target</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">trigger</span>) </span>{
-        <span class="hljs-keyword">return</span> trigger.nextElementSibling;
+<pre class="highlight"><code class="js"><span class="keyword">new</span> ClipboardJS(<span class="string">'.btn'</span>, {
+    <span class="attr">target</span>: <span class="function"><span class="keyword">function</span>(<span class="params">trigger</span>) </span>{
+        <span class="keyword">return</span> trigger.nextElementSibling;
     }
 });
 </code></pre>
 <p>If you want to dynamically set a <code>text</code>, you’ll return a String.</p>
-<pre class="highlight"><code class="js"><span class="hljs-keyword">new</span> ClipboardJS(<span class="hljs-string">'.btn'</span>, {
-    <span class="hljs-attr">text</span>: <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">trigger</span>) </span>{
-        <span class="hljs-keyword">return</span> trigger.getAttribute(<span class="hljs-string">'aria-label'</span>);
+<pre class="highlight"><code class="js"><span class="keyword">new</span> ClipboardJS(<span class="string">'.btn'</span>, {
+    <span class="attr">text</span>: <span class="function"><span class="keyword">function</span>(<span class="params">trigger</span>) </span>{
+        <span class="keyword">return</span> trigger.getAttribute(<span class="string">'aria-label'</span>);
     }
 });
 </code></pre>
 <p>For use in Bootstrap Modals or with any other library that changes the focus you’ll want to set the focused element as the <code>container</code> value.</p>
-<pre class="highlight"><code class="js"><span class="hljs-keyword">new</span> ClipboardJS(<span class="hljs-string">'.btn'</span>, {
-    <span class="hljs-attr">container</span>: <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">'modal'</span>)
+<pre class="highlight"><code class="js"><span class="keyword">new</span> ClipboardJS(<span class="string">'.btn'</span>, {
+    <span class="attr">container</span>: <span class="built_in">document</span>.getElementById(<span class="string">'modal'</span>)
 });
 </code></pre>
 <p>Also, if you are working with single page apps, you may want to manage the lifecycle of the DOM more precisely. Here’s how you clean up the events and objects that we create.</p>
-<pre class="highlight"><code class="js"><span class="hljs-keyword">var</span> clipboard = <span class="hljs-keyword">new</span> ClipboardJS(<span class="hljs-string">'.btn'</span>);
+<pre class="highlight"><code class="js"><span class="keyword">var</span> clipboard = <span class="keyword">new</span> ClipboardJS(<span class="string">'.btn'</span>);
 clipboard.destroy();
 </code></pre>
 <h2 id="browser-support"><a class="markdownIt-Anchor" href="#browser-support"></a> Browser Support</h2>
