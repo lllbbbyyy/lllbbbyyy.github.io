@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://yoursite.com/%E3%80%90%E5%A4%96%E6%96%87%E7%BF%BB%E8%AF%91%E3%80%91%E5%9F%BA%E4%BA%8EPython%E6%A1%86%E6%9E%B6%E5%BC%80%E5%8F%91%E5%AE%89%E5%85%A8%E7%9A%84RESTful-API-Web%E6%9C%8D%E5%8A%A1%E7%9A%84%E5%8E%9F%E5%88%99/</loc>
+    <lastmod>2022-03-16</lastmod>
+  </url>
+  <url>
     <loc>http://yoursite.com/hello-world/</loc>
     <lastmod>2022-03-03</lastmod>
   </url>
