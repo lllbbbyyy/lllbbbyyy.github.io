@@ -88,14 +88,14 @@
 
 
 
-<meta name="description" content="本文系毕业设计中需要进行的外文翻译工作，因该文对于整个Web服务做了一个较为全面的综述与总结，因此将翻译成果放到这里和大家分享。 原文链接  摘要 本文讨论了开发用于保存学生成绩日志的安全的RESTful Web服务API的关键点，分析了使用Web服务的相关性，给出了Web应用的分类，考虑了单页应用程序架构的特征，给出了应用程序接口架构风格的特征比较，考虑了RESTful API服务需要满足的要求">
+<meta name="description" content="本文系毕业设计中需要进行的外文翻译工作，因该文对于整个Web服务做了一个较为全面的综述与总结，因此将翻译成果放到这里和大家分享。 原文链接   摘要 本文讨论了开发用于保存学生成绩日志的安全的RESTful Web服务API的关键点，分析了使用Web服务的相关性，给出了Web应用的分类，考虑了单页应用程序架构的特征，给出了应用程序接口架构风格的特征比较，考虑了RESTful API服务需要满足的要">
 <meta property="og:type" content="article">
 <meta property="og:title" content="【外文翻译】基于Python框架开发安全的RESTful API Web服务的原则">
 <meta property="og:url" content="http://yoursite.com/%E3%80%90%E5%A4%96%E6%96%87%E7%BF%BB%E8%AF%91%E3%80%91%E5%9F%BA%E4%BA%8EPython%E6%A1%86%E6%9E%B6%E5%BC%80%E5%8F%91%E5%AE%89%E5%85%A8%E7%9A%84RESTful-API-Web%E6%9C%8D%E5%8A%A1%E7%9A%84%E5%8E%9F%E5%88%99/index.html">
 <meta property="og:site_name" content="llbbyy">
-<meta property="og:description" content="本文系毕业设计中需要进行的外文翻译工作，因该文对于整个Web服务做了一个较为全面的综述与总结，因此将翻译成果放到这里和大家分享。 原文链接  摘要 本文讨论了开发用于保存学生成绩日志的安全的RESTful Web服务API的关键点，分析了使用Web服务的相关性，给出了Web应用的分类，考虑了单页应用程序架构的特征，给出了应用程序接口架构风格的特征比较，考虑了RESTful API服务需要满足的要求">
+<meta property="og:description" content="本文系毕业设计中需要进行的外文翻译工作，因该文对于整个Web服务做了一个较为全面的综述与总结，因此将翻译成果放到这里和大家分享。 原文链接   摘要 本文讨论了开发用于保存学生成绩日志的安全的RESTful Web服务API的关键点，分析了使用Web服务的相关性，给出了Web应用的分类，考虑了单页应用程序架构的特征，给出了应用程序接口架构风格的特征比较，考虑了RESTful API服务需要满足的要">
 <meta property="article:published_time" content="2022-03-16T10:25:00.000Z">
-<meta property="article:modified_time" content="2022-03-16T10:34:36.354Z">
+<meta property="article:modified_time" content="2022-03-20T09:14:40.291Z">
 <meta property="article:author" content="llbbyy">
 <meta property="article:tag" content="Web">
 <meta property="article:tag" content="文献">
@@ -384,7 +384,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.8k 字
+                  2.8k 字
                 </span>
               
 
@@ -400,7 +400,7 @@
                   <span class="post-meta-item-text">阅读时长 &asymp;</span>
                 
                 <span title="阅读时长">
-                  6 分钟
+                  9 分钟
                 </span>
               
             </div>
@@ -423,8 +423,10 @@
       
         <p>本文系毕业设计中需要进行的外文翻译工作，因该文对于整个Web服务做了一个较为全面的综述与总结，因此将翻译成果放到这里和大家分享。</p>
 <p><a href="https://iopscience.iop.org/article/10.1088/1742-6596/2094/3/032016" target="_blank" rel="noopener">原文链接</a></p>
+<hr />
 <h1 id="摘要"><a class="markdownIt-Anchor" href="#摘要"></a> 摘要</h1>
 <p>本文讨论了开发用于保存学生成绩日志的安全的RESTful Web服务API的关键点，分析了使用Web服务的相关性，给出了Web应用的分类，考虑了单页应用程序架构的特征，给出了应用程序接口架构风格的特征比较，考虑了RESTful API服务需要满足的要求，分析了API安全的基本原理，给出了REST API开发过程中可能出现的主要漏洞列表，给出了流行的认证方案（方法）的概述，给出了Python编程语言的Web框架的特点比较，列出了开发Web API应用程序中使用的主要工具，介绍了使用Flask微框架和用于描述Swagger规范的工具在Python中创建RESTful Web服务API的安全原型的过程，详细检查了配置应用程序的过程，列出了保护Web应用程序、数据库和Web服务器设置的主要建议，考虑了保护已开发的Web应用程序的关键点，并且对以上所得结果进行了分析。</p>
+<hr />
 <h1 id="简介"><a class="markdownIt-Anchor" href="#简介"></a> 简介</h1>
 <p>在现代社会数字全球化的背景下，商业性质的解决方案向线上进行大规模过度的趋势变得越来越明显[1]。从前开发的软件也正在以Web交互形式不断重建。当创建新的服务时，基于Web的解决方案要比移动端和桌面平台更优。这种转变是由软件和对端的用户之间更加方便、易于访问的交互机制所不断推动的[2]。在线资源不会对用户提出严格的硬件要求（存储空间、内存大小、中央处理器（CPU）能力），也不会绑定只能与某些特定平台（个人计算机、智能手机、专用设备）交互。它们通过专门的互联网浏览器来组织工作。此外，线上交易的份额正在不断增长，这也导致了对于网站和网络应用程序的关注和需求不断增加[3]。</p>
 <p>但是，网站逻辑的复杂性也在不断上升。因此，普通的静态网站或者基于内容管理系统（Wordpress、Joomla、IC-Bitrix）的动态解决方案在非线性平台或者电子商务的细分领域变得不再能满足客户的需求。同时，在功能方面以及软件产品的开发、扩展、保护和维护过程的效率方面，上述方案也都出现了许多问题。最后的结果就是，静态网站几乎完全被功能齐全的Web应用程序所取代。</p>
@@ -437,6 +439,43 @@
 <p>API是一组应用程序交换信息和传输数据的方法和规则。通常来说，它们是一个程序用于与另外的程序交互的类、函数、结构体。API不仅有助于组织交互，它还在保证交互的安全性方面发挥着重要作用。这样的接口隐藏了服务实现的细节，并且在开发人员提供的框架内工作。使用应用程序程序接口，可以对用户可用的操作施加限制，指定输入输出的数据[5]。此外，API还有许多反映接口交互工作架构风格的功能。</p>
 <p>此类应用程序由于逻辑复杂，并且由许多组件组成，因此系统安全性被显著影响[6]。组织安全性时需要考虑许多因素。除了前后端的安全性外，还应该专注于开发安全的API。入侵或者意外的客户端错误可能导致服务不可用、数据丢失或整个应用程序无法运行。这会严重影响用户体验，并且给企业带来巨大损失。因此，在开发任何Web服务时，确保安全性都是一个热门话题。</p>
 <p>本文致力于开发安全的RESTful API Web服务，使用Python3编程语言和Flask Web微框架生成学生成绩列表。</p>
+<hr />
+<h1 id="材料和方案"><a class="markdownIt-Anchor" href="#材料和方案"></a> 材料和方案</h1>
+<p>API的实现基于使用的协议和软件规范，为传输的消息构建了句法和语义规则。这些规范构成了API的架构。</p>
+<p>目前有许多包含标准化模式和数据交换规则的架构风格。最常见的架构风格是RPC（gRPC）、REST、SOAP和GraphQL。</p>
+<p>以RPC（远程过程调用）规范为代表的架构风格允许在HTTP API的上下文中远程调用函数。当远程调用特定过程时，客户端通过为服务器生成特殊消息来获取大部分功能。服务器反序列化收到的消息[7]，启动请求的函数并且返回结果。gRPC是RPC的新版本，旨在解决上一版本规范存在的一些问题。gRPC还添加了许多新功能，例如负载均衡、消息追踪等。此外，这个新标准开始使用了protobufs的概念，并且运行在HTTP/2之上。Protobuf是一个proto文件，它是一个字典，数据在此基础上以特殊的二进制格式进行编码和解码。也就是说，它是一种新的序列化格式（JSON/XML的替代品），用于客户端和服务器之间的信息交换[8]。该创新允许在实时大量数据交换的环境中保持高性能，它也能够使用SSL/TLS、OAuth 2.0、身份认证用令牌、或者是你自己编写的安全身份认证实现。</p>
+<p>RPC（gRPC）的好处：</p>
+<ul>
+<li>简单的交互机制；</li>
+<li>添加函数并随后转换到对端的能力；</li>
+<li>高性能；</li>
+<li>与安全工具交互的能力。</li>
+</ul>
+<p>RPC（gRPC）的缺点：</p>
+<ul>
+<li>抽象程度低，导致重用困难；</li>
+<li>进行规格化较困难；</li>
+<li>在查询的自省上存在问题</li>
+<li>由于无法完全隐藏API实现的细节而降低了安全性</li>
+</ul>
+<p>RPC（gRPC）最适用于开发用于内部通信的高性能微服务[9]，以及为远程控制系统创建API，例如在物联网领域等。</p>
+<p>GraphQL是Facebook开发人员引入的另一个规范。GraphQL专注于图形格式的数据表示。与关系数据库中表格视图的创建者不同，GraphQL的开发人员借鉴了MongoDB等面向文档的数据库，开创了一种文档结构。该实现基于相互引用（边）的实体（节点）图。</p>
+<p>首先，构建一个方案来描述（使用SDL语言的特殊语法）预期响应中的确切查询和数据类型。具有这种指定方案的客户端，甚至能够在发送查询之前，就可以确保服务器对其有答案。在后端，操作根据方案进行解释，并以JSON格式发送响应以及请求的数据。因此，我们拥有一种基于查询方案的技术，可以从多个端点接收数据，并以查询发送者确定的查询方案做出单个响应。此外，GraphQL支持订阅机制，允许从Web服务器实时接收信息。</p>
+<p>GraphQL的好处：</p>
+<ul>
+<li>一个查询足以检索任何复杂的数据；</li>
+<li>使得特定类型的数据查询方案可行；</li>
+<li>有效地处理关联数据；</li>
+<li>具有详细的错误日志；</li>
+<li>查询可灵活定制（格式定义、分割、版本单一）。</li>
+</ul>
+<p>GraphQL的缺点：</p>
+<ul>
+<li>如果一个查询中有太多的嵌套字段，可能会降低性能；</li>
+<li>缓存困难；</li>
+<li>学习曲线高，需要SDL进行必要的处理。</li>
+</ul>
+<p>当你需要封装开发API的系统的复杂逻辑时，GraphQL是一个很好的选择，这在设计庞大的项目和微服务时很重要。此外，GraphQL通过优化单个消息的有效负载（payload），为有效处理移动设备（移动API）上的数据提供了机会。</p>
 
       
     </div>
@@ -631,7 +670,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#摘要"><span class="nav-number">1.</span> <span class="nav-text"> 摘要</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">2.</span> <span class="nav-text"> 简介</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#摘要"><span class="nav-number">1.</span> <span class="nav-text"> 摘要</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#简介"><span class="nav-number">2.</span> <span class="nav-text"> 简介</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#材料和方案"><span class="nav-number">3.</span> <span class="nav-text"> 材料和方案</span></a></li></ol></div>
             
 
           </div>
@@ -665,7 +704,7 @@
     
       <span class="post-meta-item-text">Site words total count&#58;</span>
     
-    <span title="Site words total count">27k</span>
+    <span title="Site words total count">28k</span>
   
 </div>
 
