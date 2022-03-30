@@ -190,6 +190,13 @@
   </url>
   
   <url>
+    <loc>http://yoursite.com/tags/Codeforces/</loc>
+    <lastmod>2022-03-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/tags/Web/</loc>
     <lastmod>2022-03-30</lastmod>
     <changefreq>weekly</changefreq>
@@ -205,13 +212,6 @@
   
   <url>
     <loc>http://yoursite.com/tags/Python/</loc>
-    <lastmod>2022-03-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/tags/Codeforces/</loc>
     <lastmod>2022-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -239,13 +239,6 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/tags/%E8%80%83%E7%A0%94/</loc>
-    <lastmod>2022-03-30</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/tags/%E5%A4%9A%E4%BA%BA%E5%90%88%E4%BD%9C/</loc>
     <lastmod>2022-03-30</lastmod>
     <changefreq>weekly</changefreq>
@@ -254,6 +247,13 @@
   
   <url>
     <loc>http://yoursite.com/tags/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/</loc>
+    <lastmod>2022-03-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/tags/%E8%80%83%E7%A0%94/</loc>
     <lastmod>2022-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -276,14 +276,14 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/categories/%E6%84%9F%E6%83%B3%E6%9D%82%E8%B0%88/</loc>
+    <loc>http://yoursite.com/categories/%E5%B7%A5%E7%A8%8B%E7%90%86%E5%BF%B5/</loc>
     <lastmod>2022-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://yoursite.com/categories/%E5%B7%A5%E7%A8%8B%E7%90%86%E5%BF%B5/</loc>
+    <loc>http://yoursite.com/categories/%E6%84%9F%E6%83%B3%E6%9D%82%E8%B0%88/</loc>
     <lastmod>2022-03-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
