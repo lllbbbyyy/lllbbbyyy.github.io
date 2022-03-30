@@ -1,6 +1,72 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>ARM架构CentOS 8下通过Docker搭建GitLab</title>
+    <url>/CentOS-8%E4%B8%8B%E6%90%AD%E5%BB%BAGitLab/</url>
+    <content><![CDATA[<p>本文主要叙述如何在ARM架构的CentOS 8操作系统下搭建GitLab</p>
+<hr />
+<h1 id="首先安装docker"><a class="markdownIt-Anchor" href="#首先安装docker"></a> 首先安装Docker</h1>
+<p>先下载docker-ce源，不能够直接通过dnf安装docker，通过<code>dnf install docker</code>默认安装的是podman软件，centos8下默认使用podman替换docker，不能够正常使用</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl https://download.docker.com/linux/centos/docker-ce.repo -o /etc/yum.repos.d/docker-ce.repo</span><br></pre></td></tr></table></figure>
+<p>卸载podman</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">dnf -y erase podman buildah</span><br></pre></td></tr></table></figure>
+<p>再安装docker-ce，<code>--allowerasing</code>表示允许进行包替换</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">dnf install docker-ce --allowerasing</span><br></pre></td></tr></table></figure>
+<p>配置docker开机自启，并且启动docker</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">systemctl <span class="built_in">enable</span> docker</span><br><span class="line">systemctl start docker</span><br></pre></td></tr></table></figure>
+<p>更换国内源，加快镜像拉取速度</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vim /etc/docker/daemon.json</span><br></pre></td></tr></table></figure>
+<p>填入以下内容</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"registry-mirrors"</span>:[</span><br><span class="line">         <span class="string">"http://docker.mirrors.ustc.edu.cn"</span>,</span><br><span class="line">         <span class="string">"http://hub-mirror.c.163.com"</span>,</span><br><span class="line">         <span class="string">"http://registry.docker-cn.com"</span></span><br><span class="line">    ] ,</span><br><span class="line">    <span class="string">"insecure-registries"</span>:[</span><br><span class="line">       <span class="string">"docker.mirrors.ustc.edu.cn"</span>,</span><br><span class="line">         <span class="string">"registry.docker-cn.com"</span></span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<hr />
+<h1 id="通过docker拉取gitlab镜像"><a class="markdownIt-Anchor" href="#通过docker拉取gitlab镜像"></a> 通过Docker拉取GitLab镜像</h1>
+<p>由于正常拉取的gitlab镜像是x86架构的，因此需要特殊拉取arm架构下的镜像</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker pull yrzr/gitlab-ce-arm64v8</span><br></pre></td></tr></table></figure>
+<hr />
+<h1 id="启动docker镜像"><a class="markdownIt-Anchor" href="#启动docker镜像"></a> 启动Docker镜像</h1>
+<p>首先在本机创建存放容器数据的文件夹：</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~</span><br><span class="line">mkdir -p gitlabdata/config</span><br><span class="line">mkdir -p gitlabdata/logs</span><br><span class="line">mkdir -p gitlabdata/data</span><br></pre></td></tr></table></figure>
+<p>接着启动一个GitLab的容器</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker run --detach \</span><br><span class="line">  --publish 443:443 --publish 80:80 --publish 2222:22 \</span><br><span class="line">  --name gitlab \</span><br><span class="line">  --restart always \</span><br><span class="line">  --volume ~/gitlabdata/config:/etc/gitlab \</span><br><span class="line">  --volume ~/gitlabdata/logs:/var/<span class="built_in">log</span>/gitlab \</span><br><span class="line">  --volume ~/gitlabdata/data:/var/opt/gitlab \</span><br><span class="line">  yrzr/gitlab-ce-arm64v8</span><br></pre></td></tr></table></figure>
+<ul>
+<li>detach表示后台运行</li>
+<li>publish表示端口映射，将容器的443、80、22端口映射到本机。443、80分别负责HTTPS与HTTP服务。22端口负责SSH服务，但是由于本机服务器需要SSH服务进行远程登陆，因此将本机的2222端口与容器进行映射</li>
+<li>restart表示容器退出后总是重启</li>
+<li>volume表示将容器内部的数据映射到本机，防止容器重启后之前的数据丢失</li>
+</ul>
+<hr />
+<h1 id="配置管理员密码"><a class="markdownIt-Anchor" href="#配置管理员密码"></a> 配置管理员密码</h1>
+<p>首先登入容器中，进入数据库管理页中</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker <span class="built_in">exec</span> -it gitlab /bin/bash</span><br><span class="line"><span class="built_in">cd</span> /opt/gitlab/bin</span><br><span class="line">gitlab-rails console -e production</span><br></pre></td></tr></table></figure>
+<p>修改root账号密码</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">u=User.where(id:1).first</span><br><span class="line">u.password=<span class="string">'xxx'</span></span><br><span class="line">u.password_confirmation=<span class="string">'xxx'</span></span><br><span class="line">u.save!</span><br><span class="line"><span class="built_in">exit</span></span><br></pre></td></tr></table></figure>
+<p>此后便可通过root账号登录，并且修改项目的各项配置</p>
+<hr />
+<h1 id="修改gitlab配置文件"><a class="markdownIt-Anchor" href="#修改gitlab配置文件"></a> 修改GitLab配置文件</h1>
+<p>打开相应的配置文件</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker <span class="built_in">exec</span> -it gitlab /bin/bash</span><br><span class="line">vi /etc/gitlab/gitlab.rb</span><br></pre></td></tr></table></figure>
+<p>在该文件中添加：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">external_url &#39;http:&#x2F;&#x2F;10.80.42.208&#39;</span><br><span class="line">gitlab_rails[&#39;gitlab_shell_ssh_port&#39;] &#x3D; 2222</span><br><span class="line">gitlab_rails[&#39;time_zone&#39;] &#x3D; &#39;Asia&#x2F;Shanghai&#39;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>负责修改正确的clone地址</li>
+<li>配置正确的ssh端口</li>
+<li>修改时区<br />
+重新加载配置文件并且重启服务</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">gitlab-ctl reconfigure</span><br><span class="line">gitlab-ctl restart</span><br></pre></td></tr></table></figure>
+<hr />
+<h1 id="汉化"><a class="markdownIt-Anchor" href="#汉化"></a> 汉化</h1>
+<p>gitlab 12版本以上可以在设置，偏好中自行选择中文</p>
+]]></content>
+      <categories>
+        <category>技术实践</category>
+      </categories>
+      <tags>
+        <tag>环境配置</tag>
+        <tag>Linux</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>2020 ICPC南京站训练部分题解+补题</title>
     <url>/2020ICPC%E5%8D%97%E4%BA%AC%E7%AB%99%E8%AE%AD%E7%BB%83%E9%83%A8%E5%88%86%E9%A2%98%E8%A7%A3-%E8%A1%A5%E9%A2%98/</url>
     <content><![CDATA[<p>今天是以2020 ICPC南京站作为训练题目，这篇文章主要是对做的题的一个总结以及对于一些差一点做出来题的一个补题。题目顺序是按照个人角度的难度顺序来排的，包括在训练时做的顺序等等。</p>
@@ -92,69 +158,71 @@
       </tags>
   </entry>
   <entry>
-    <title>ARM架构CentOS 8下通过Docker搭建GitLab</title>
-    <url>/CentOS-8%E4%B8%8B%E6%90%AD%E5%BB%BAGitLab/</url>
-    <content><![CDATA[<p>本文主要叙述如何在ARM架构的CentOS 8操作系统下搭建GitLab</p>
+    <title>【外文翻译】基于Python框架开发安全的RESTful API Web服务的原则</title>
+    <url>/%E3%80%90%E5%A4%96%E6%96%87%E7%BF%BB%E8%AF%91%E3%80%91%E5%9F%BA%E4%BA%8EPython%E6%A1%86%E6%9E%B6%E5%BC%80%E5%8F%91%E5%AE%89%E5%85%A8%E7%9A%84RESTful-API-Web%E6%9C%8D%E5%8A%A1%E7%9A%84%E5%8E%9F%E5%88%99/</url>
+    <content><![CDATA[<p>本文系毕业设计中需要进行的外文翻译工作，因该文对于整个Web服务做了一个较为全面的综述与总结，因此将翻译成果放到这里和大家分享。</p>
+<p><a href="https://iopscience.iop.org/article/10.1088/1742-6596/2094/3/032016" target="_blank" rel="noopener">原文链接</a></p>
 <hr />
-<h1 id="首先安装docker"><a class="markdownIt-Anchor" href="#首先安装docker"></a> 首先安装Docker</h1>
-<p>先下载docker-ce源，不能够直接通过dnf安装docker，通过<code>dnf install docker</code>默认安装的是podman软件，centos8下默认使用podman替换docker，不能够正常使用</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">curl https://download.docker.com/linux/centos/docker-ce.repo -o /etc/yum.repos.d/docker-ce.repo</span><br></pre></td></tr></table></figure>
-<p>卸载podman</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">dnf -y erase podman buildah</span><br></pre></td></tr></table></figure>
-<p>再安装docker-ce，<code>--allowerasing</code>表示允许进行包替换</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">dnf install docker-ce --allowerasing</span><br></pre></td></tr></table></figure>
-<p>配置docker开机自启，并且启动docker</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">systemctl <span class="built_in">enable</span> docker</span><br><span class="line">systemctl start docker</span><br></pre></td></tr></table></figure>
-<p>更换国内源，加快镜像拉取速度</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">vim /etc/docker/daemon.json</span><br></pre></td></tr></table></figure>
-<p>填入以下内容</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">"registry-mirrors"</span>:[</span><br><span class="line">         <span class="string">"http://docker.mirrors.ustc.edu.cn"</span>,</span><br><span class="line">         <span class="string">"http://hub-mirror.c.163.com"</span>,</span><br><span class="line">         <span class="string">"http://registry.docker-cn.com"</span></span><br><span class="line">    ] ,</span><br><span class="line">    <span class="string">"insecure-registries"</span>:[</span><br><span class="line">       <span class="string">"docker.mirrors.ustc.edu.cn"</span>,</span><br><span class="line">         <span class="string">"registry.docker-cn.com"</span></span><br><span class="line">    ]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="摘要"><a class="markdownIt-Anchor" href="#摘要"></a> 摘要</h1>
+<p>本文讨论了开发用于保存学生成绩日志的安全的RESTful Web服务API的关键点，分析了使用Web服务的相关性，给出了Web应用的分类，考虑了单页应用程序架构的特征，给出了应用程序接口架构风格的特征比较，考虑了RESTful API服务需要满足的要求，分析了API安全的基本原理，给出了REST API开发过程中可能出现的主要漏洞列表，给出了流行的认证方案（方法）的概述，给出了Python编程语言的Web框架的特点比较，列出了开发Web API应用程序中使用的主要工具，介绍了使用Flask微框架和用于描述Swagger规范的工具在Python中创建RESTful Web服务API的安全原型的过程，详细检查了配置应用程序的过程，列出了保护Web应用程序、数据库和Web服务器设置的主要建议，考虑了保护已开发的Web应用程序的关键点，并且对以上所得结果进行了分析。</p>
 <hr />
-<h1 id="通过docker拉取gitlab镜像"><a class="markdownIt-Anchor" href="#通过docker拉取gitlab镜像"></a> 通过Docker拉取GitLab镜像</h1>
-<p>由于正常拉取的gitlab镜像是x86架构的，因此需要特殊拉取arm架构下的镜像</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker pull yrzr/gitlab-ce-arm64v8</span><br></pre></td></tr></table></figure>
+<h1 id="简介"><a class="markdownIt-Anchor" href="#简介"></a> 简介</h1>
+<p>在现代社会数字全球化的背景下，商业性质的解决方案向线上进行大规模过度的趋势变得越来越明显[1]。从前开发的软件也正在以Web交互形式不断重建。当创建新的服务时，基于Web的解决方案要比移动端和桌面平台更优。这种转变是由软件和对端的用户之间更加方便、易于访问的交互机制所不断推动的[2]。在线资源不会对用户提出严格的硬件要求（存储空间、内存大小、中央处理器（CPU）能力），也不会绑定只能与某些特定平台（个人计算机、智能手机、专用设备）交互。它们通过专门的互联网浏览器来组织工作。此外，线上交易的份额正在不断增长，这也导致了对于网站和网络应用程序的关注和需求不断增加[3]。</p>
+<p>但是，网站逻辑的复杂性也在不断上升。因此，普通的静态网站或者基于内容管理系统（Wordpress、Joomla、IC-Bitrix）的动态解决方案在非线性平台或者电子商务的细分领域变得不再能满足客户的需求。同时，在功能方面以及软件产品的开发、扩展、保护和维护过程的效率方面，上述方案也都出现了许多问题。最后的结果就是，静态网站几乎完全被功能齐全的Web应用程序所取代。</p>
+<p>Web应用程序不再是HTML页面、样式文件、脚本文件和媒体文件的集合。Web应用程序基于功能和外观分离的C/S架构。应用程序的业务逻辑在一个特殊的专用服务器（后端）上执行，而客户端则与用户的因特网浏览器上的用户界面进行交互（前端）。这种方法允许实时生成HTML内容，并且能够使得在查看的网页上重新加载的次数最少。几乎所有的现代电子商务网站、社交网站、即时通讯工具、在线程序、论坛和搜索引擎都是Web应用程序[4]。</p>
+<p>根据主要组件的类型，Web应用程序可以分为以下几种类型：后端、前端和SPA。</p>
+<p>后端应用程序（服务端应用程序）集中了应用程序的主要功能和逻辑，并且与数据库交互。它们可以使用多种编程语言进行开发，其中最主流的有：Python、Ruby、PHP、C#（。NET）、Node.js。但是，如果不使用被称为Web框架的特殊工具，那就几乎不可能实现生产可用的解决方案。上面列出的每种编程语言都有自己的一组用于创建Web应用程序的框架：Python（Django、Flask、FastAPI、Tornado），PHP（Laravel、Simfony、Yii2），Ruby（Ruby on Rails、Sinatra），Node.js（Express.js），C#（ASP .NET Core）。</p>
+<p>框架承担了一部分开发人员的任务，并且能够提供典型的重定向、身份验证、注册和其他功能从而保证应用程序的安全性。该应用程序部署在专门配置的Web服务器上，并且独立地生成HTML显示文件（但是，在大多数情况下，浏览器还是会重新加载页面）。</p>
+<p>前端应用程序（客户端应用程序）直接工作在用户的Web浏览器中。它们是使用JavaScript、TypeScript和Vue.js、ReactJS、AngularJS编程语言开发的。它们适用于应用程序不使用数据库并且客户端信息不超过一个会话的情况下。它们全权负责HTML代码的呈现。</p>
+<p>SPA（单页应用程序）是上述解决方案的一个组合，它将一个Web应用程序分为两个（前端和后端），并且组织它们之间的交互。后端部分处理逻辑和请求，并同数据库一起工作；前端部分则根据后端传来的数据形成一个对外的视图，并且将结果呈现在浏览器中。应用程序的客户端和服务端之间的信息交互通常通过专门开发的应用程序编程接口（API）进行。几乎所有的现代Web应用程序都基于SPA的概念。</p>
+<p>API是一组应用程序交换信息和传输数据的方法和规则。通常来说，它们是一个程序用于与另外的程序交互的类、函数、结构体。API不仅有助于组织交互，它还在保证交互的安全性方面发挥着重要作用。这样的接口隐藏了服务实现的细节，并且在开发人员提供的框架内工作。使用应用程序程序接口，可以对用户可用的操作施加限制，指定输入输出的数据[5]。此外，API还有许多反映接口交互工作架构风格的功能。</p>
+<p>此类应用程序由于逻辑复杂，并且由许多组件组成，因此系统安全性被显著影响[6]。组织安全性时需要考虑许多因素。除了前后端的安全性外，还应该专注于开发安全的API。入侵或者意外的客户端错误可能导致服务不可用、数据丢失或整个应用程序无法运行。这会严重影响用户体验，并且给企业带来巨大损失。因此，在开发任何Web服务时，确保安全性都是一个热门话题。</p>
+<p>本文致力于开发安全的RESTful API Web服务，使用Python3编程语言和Flask Web微框架生成学生成绩列表。</p>
 <hr />
-<h1 id="启动docker镜像"><a class="markdownIt-Anchor" href="#启动docker镜像"></a> 启动Docker镜像</h1>
-<p>首先在本机创建存放容器数据的文件夹：</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~</span><br><span class="line">mkdir -p gitlabdata/config</span><br><span class="line">mkdir -p gitlabdata/logs</span><br><span class="line">mkdir -p gitlabdata/data</span><br></pre></td></tr></table></figure>
-<p>接着启动一个GitLab的容器</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker run --detach \</span><br><span class="line">  --publish 443:443 --publish 80:80 --publish 2222:22 \</span><br><span class="line">  --name gitlab \</span><br><span class="line">  --restart always \</span><br><span class="line">  --volume ~/gitlabdata/config:/etc/gitlab \</span><br><span class="line">  --volume ~/gitlabdata/logs:/var/<span class="built_in">log</span>/gitlab \</span><br><span class="line">  --volume ~/gitlabdata/data:/var/opt/gitlab \</span><br><span class="line">  yrzr/gitlab-ce-arm64v8</span><br></pre></td></tr></table></figure>
+<h1 id="材料和方案"><a class="markdownIt-Anchor" href="#材料和方案"></a> 材料和方案</h1>
+<p>API的实现基于使用的协议和软件规范，为传输的消息构建了句法和语义规则。这些规范构成了API的架构。</p>
+<p>目前有许多包含标准化模式和数据交换规则的架构风格。最常见的架构风格是RPC（gRPC）、REST、SOAP和GraphQL。</p>
+<p>以RPC（远程过程调用）规范为代表的架构风格允许在HTTP API的上下文中远程调用函数。当远程调用特定过程时，客户端通过为服务器生成特殊消息来获取大部分功能。服务器反序列化收到的消息[7]，启动请求的函数并且返回结果。gRPC是RPC的新版本，旨在解决上一版本规范存在的一些问题。gRPC还添加了许多新功能，例如负载均衡、消息追踪等。此外，这个新标准开始使用了protobufs的概念，并且运行在HTTP/2之上。Protobuf是一个proto文件，它是一个字典，数据在此基础上以特殊的二进制格式进行编码和解码。也就是说，它是一种新的序列化格式（JSON/XML的替代品），用于客户端和服务器之间的信息交换[8]。该创新允许在实时大量数据交换的环境中保持高性能，它也能够使用SSL/TLS、OAuth 2.0、身份认证用令牌、或者是你自己编写的安全身份认证实现。</p>
+<p>RPC（gRPC）的好处：</p>
 <ul>
-<li>detach表示后台运行</li>
-<li>publish表示端口映射，将容器的443、80、22端口映射到本机。443、80分别负责HTTPS与HTTP服务。22端口负责SSH服务，但是由于本机服务器需要SSH服务进行远程登陆，因此将本机的2222端口与容器进行映射</li>
-<li>restart表示容器退出后总是重启</li>
-<li>volume表示将容器内部的数据映射到本机，防止容器重启后之前的数据丢失</li>
+<li>简单的交互机制；</li>
+<li>添加函数并随后转换到对端的能力；</li>
+<li>高性能；</li>
+<li>与安全工具交互的能力。</li>
 </ul>
-<hr />
-<h1 id="配置管理员密码"><a class="markdownIt-Anchor" href="#配置管理员密码"></a> 配置管理员密码</h1>
-<p>首先登入容器中，进入数据库管理页中</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker <span class="built_in">exec</span> -it gitlab /bin/bash</span><br><span class="line"><span class="built_in">cd</span> /opt/gitlab/bin</span><br><span class="line">gitlab-rails console -e production</span><br></pre></td></tr></table></figure>
-<p>修改root账号密码</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">u=User.where(id:1).first</span><br><span class="line">u.password=<span class="string">'xxx'</span></span><br><span class="line">u.password_confirmation=<span class="string">'xxx'</span></span><br><span class="line">u.save!</span><br><span class="line"><span class="built_in">exit</span></span><br></pre></td></tr></table></figure>
-<p>此后便可通过root账号登录，并且修改项目的各项配置</p>
-<hr />
-<h1 id="修改gitlab配置文件"><a class="markdownIt-Anchor" href="#修改gitlab配置文件"></a> 修改GitLab配置文件</h1>
-<p>打开相应的配置文件</p>
-<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">docker <span class="built_in">exec</span> -it gitlab /bin/bash</span><br><span class="line">vi /etc/gitlab/gitlab.rb</span><br></pre></td></tr></table></figure>
-<p>在该文件中添加：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">external_url &#39;http:&#x2F;&#x2F;10.80.42.208&#39;</span><br><span class="line">gitlab_rails[&#39;gitlab_shell_ssh_port&#39;] &#x3D; 2222</span><br><span class="line">gitlab_rails[&#39;time_zone&#39;] &#x3D; &#39;Asia&#x2F;Shanghai&#39;</span><br></pre></td></tr></table></figure>
+<p>RPC（gRPC）的缺点：</p>
 <ul>
-<li>负责修改正确的clone地址</li>
-<li>配置正确的ssh端口</li>
-<li>修改时区<br />
-重新加载配置文件并且重启服务</li>
+<li>抽象程度低，导致重用困难；</li>
+<li>进行规格化较困难；</li>
+<li>在查询的自省上存在问题</li>
+<li>由于无法完全隐藏API实现的细节而降低了安全性</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">gitlab-ctl reconfigure</span><br><span class="line">gitlab-ctl restart</span><br></pre></td></tr></table></figure>
-<hr />
-<h1 id="汉化"><a class="markdownIt-Anchor" href="#汉化"></a> 汉化</h1>
-<p>gitlab 12版本以上可以在设置，偏好中自行选择中文</p>
+<p>RPC（gRPC）最适用于开发用于内部通信的高性能微服务[9]，以及为远程控制系统创建API，例如在物联网领域等。</p>
+<p>GraphQL是Facebook开发人员引入的另一个规范。GraphQL专注于图形格式的数据表示。与关系数据库中表格视图的创建者不同，GraphQL的开发人员借鉴了MongoDB等面向文档的数据库，开创了一种文档结构。该实现基于相互引用（边）的实体（节点）图。</p>
+<p>首先，构建一个方案来描述（使用SDL语言的特殊语法）预期响应中的确切查询和数据类型。具有这种指定方案的客户端，甚至能够在发送查询之前，就可以确保服务器对其有答案。在后端，操作根据方案进行解释，并以JSON格式发送响应以及请求的数据。因此，我们拥有一种基于查询方案的技术，可以从多个端点接收数据，并以查询发送者确定的查询方案做出单个响应。此外，GraphQL支持订阅机制，允许从Web服务器实时接收信息。</p>
+<p>GraphQL的好处：</p>
+<ul>
+<li>一个查询足以检索任何复杂的数据；</li>
+<li>使得特定类型的数据查询方案可行；</li>
+<li>有效地处理关联数据；</li>
+<li>具有详细的错误日志；</li>
+<li>查询可灵活定制（格式定义、分割、版本单一）。</li>
+</ul>
+<p>GraphQL的缺点：</p>
+<ul>
+<li>如果一个查询中有太多的嵌套字段，可能会降低性能；</li>
+<li>缓存困难；</li>
+<li>学习曲线高，需要SDL进行必要的处理。</li>
+</ul>
+<p>当你需要封装开发API的系统的复杂逻辑时，GraphQL是一个很好的选择，这在设计庞大的项目和微服务时很重要。此外，GraphQL通过优化单个消息的有效负载（payload），为有效处理移动设备（移动API）上的数据提供了机会。</p>
 ]]></content>
       <categories>
-        <category>技术实践</category>
+        <category>理论学习</category>
       </categories>
       <tags>
-        <tag>环境配置</tag>
-        <tag>Linux</tag>
+        <tag>Web</tag>
+        <tag>文献</tag>
+        <tag>Python</tag>
       </tags>
   </entry>
   <entry>
@@ -268,74 +336,6 @@
 ]]></content>
   </entry>
   <entry>
-    <title>【外文翻译】基于Python框架开发安全的RESTful API Web服务的原则</title>
-    <url>/%E3%80%90%E5%A4%96%E6%96%87%E7%BF%BB%E8%AF%91%E3%80%91%E5%9F%BA%E4%BA%8EPython%E6%A1%86%E6%9E%B6%E5%BC%80%E5%8F%91%E5%AE%89%E5%85%A8%E7%9A%84RESTful-API-Web%E6%9C%8D%E5%8A%A1%E7%9A%84%E5%8E%9F%E5%88%99/</url>
-    <content><![CDATA[<p>本文系毕业设计中需要进行的外文翻译工作，因该文对于整个Web服务做了一个较为全面的综述与总结，因此将翻译成果放到这里和大家分享。</p>
-<p><a href="https://iopscience.iop.org/article/10.1088/1742-6596/2094/3/032016" target="_blank" rel="noopener">原文链接</a></p>
-<hr />
-<h1 id="摘要"><a class="markdownIt-Anchor" href="#摘要"></a> 摘要</h1>
-<p>本文讨论了开发用于保存学生成绩日志的安全的RESTful Web服务API的关键点，分析了使用Web服务的相关性，给出了Web应用的分类，考虑了单页应用程序架构的特征，给出了应用程序接口架构风格的特征比较，考虑了RESTful API服务需要满足的要求，分析了API安全的基本原理，给出了REST API开发过程中可能出现的主要漏洞列表，给出了流行的认证方案（方法）的概述，给出了Python编程语言的Web框架的特点比较，列出了开发Web API应用程序中使用的主要工具，介绍了使用Flask微框架和用于描述Swagger规范的工具在Python中创建RESTful Web服务API的安全原型的过程，详细检查了配置应用程序的过程，列出了保护Web应用程序、数据库和Web服务器设置的主要建议，考虑了保护已开发的Web应用程序的关键点，并且对以上所得结果进行了分析。</p>
-<hr />
-<h1 id="简介"><a class="markdownIt-Anchor" href="#简介"></a> 简介</h1>
-<p>在现代社会数字全球化的背景下，商业性质的解决方案向线上进行大规模过度的趋势变得越来越明显[1]。从前开发的软件也正在以Web交互形式不断重建。当创建新的服务时，基于Web的解决方案要比移动端和桌面平台更优。这种转变是由软件和对端的用户之间更加方便、易于访问的交互机制所不断推动的[2]。在线资源不会对用户提出严格的硬件要求（存储空间、内存大小、中央处理器（CPU）能力），也不会绑定只能与某些特定平台（个人计算机、智能手机、专用设备）交互。它们通过专门的互联网浏览器来组织工作。此外，线上交易的份额正在不断增长，这也导致了对于网站和网络应用程序的关注和需求不断增加[3]。</p>
-<p>但是，网站逻辑的复杂性也在不断上升。因此，普通的静态网站或者基于内容管理系统（Wordpress、Joomla、IC-Bitrix）的动态解决方案在非线性平台或者电子商务的细分领域变得不再能满足客户的需求。同时，在功能方面以及软件产品的开发、扩展、保护和维护过程的效率方面，上述方案也都出现了许多问题。最后的结果就是，静态网站几乎完全被功能齐全的Web应用程序所取代。</p>
-<p>Web应用程序不再是HTML页面、样式文件、脚本文件和媒体文件的集合。Web应用程序基于功能和外观分离的C/S架构。应用程序的业务逻辑在一个特殊的专用服务器（后端）上执行，而客户端则与用户的因特网浏览器上的用户界面进行交互（前端）。这种方法允许实时生成HTML内容，并且能够使得在查看的网页上重新加载的次数最少。几乎所有的现代电子商务网站、社交网站、即时通讯工具、在线程序、论坛和搜索引擎都是Web应用程序[4]。</p>
-<p>根据主要组件的类型，Web应用程序可以分为以下几种类型：后端、前端和SPA。</p>
-<p>后端应用程序（服务端应用程序）集中了应用程序的主要功能和逻辑，并且与数据库交互。它们可以使用多种编程语言进行开发，其中最主流的有：Python、Ruby、PHP、C#（。NET）、Node.js。但是，如果不使用被称为Web框架的特殊工具，那就几乎不可能实现生产可用的解决方案。上面列出的每种编程语言都有自己的一组用于创建Web应用程序的框架：Python（Django、Flask、FastAPI、Tornado），PHP（Laravel、Simfony、Yii2），Ruby（Ruby on Rails、Sinatra），Node.js（Express.js），C#（ASP .NET Core）。</p>
-<p>框架承担了一部分开发人员的任务，并且能够提供典型的重定向、身份验证、注册和其他功能从而保证应用程序的安全性。该应用程序部署在专门配置的Web服务器上，并且独立地生成HTML显示文件（但是，在大多数情况下，浏览器还是会重新加载页面）。</p>
-<p>前端应用程序（客户端应用程序）直接工作在用户的Web浏览器中。它们是使用JavaScript、TypeScript和Vue.js、ReactJS、AngularJS编程语言开发的。它们适用于应用程序不使用数据库并且客户端信息不超过一个会话的情况下。它们全权负责HTML代码的呈现。</p>
-<p>SPA（单页应用程序）是上述解决方案的一个组合，它将一个Web应用程序分为两个（前端和后端），并且组织它们之间的交互。后端部分处理逻辑和请求，并同数据库一起工作；前端部分则根据后端传来的数据形成一个对外的视图，并且将结果呈现在浏览器中。应用程序的客户端和服务端之间的信息交互通常通过专门开发的应用程序编程接口（API）进行。几乎所有的现代Web应用程序都基于SPA的概念。</p>
-<p>API是一组应用程序交换信息和传输数据的方法和规则。通常来说，它们是一个程序用于与另外的程序交互的类、函数、结构体。API不仅有助于组织交互，它还在保证交互的安全性方面发挥着重要作用。这样的接口隐藏了服务实现的细节，并且在开发人员提供的框架内工作。使用应用程序程序接口，可以对用户可用的操作施加限制，指定输入输出的数据[5]。此外，API还有许多反映接口交互工作架构风格的功能。</p>
-<p>此类应用程序由于逻辑复杂，并且由许多组件组成，因此系统安全性被显著影响[6]。组织安全性时需要考虑许多因素。除了前后端的安全性外，还应该专注于开发安全的API。入侵或者意外的客户端错误可能导致服务不可用、数据丢失或整个应用程序无法运行。这会严重影响用户体验，并且给企业带来巨大损失。因此，在开发任何Web服务时，确保安全性都是一个热门话题。</p>
-<p>本文致力于开发安全的RESTful API Web服务，使用Python3编程语言和Flask Web微框架生成学生成绩列表。</p>
-<hr />
-<h1 id="材料和方案"><a class="markdownIt-Anchor" href="#材料和方案"></a> 材料和方案</h1>
-<p>API的实现基于使用的协议和软件规范，为传输的消息构建了句法和语义规则。这些规范构成了API的架构。</p>
-<p>目前有许多包含标准化模式和数据交换规则的架构风格。最常见的架构风格是RPC（gRPC）、REST、SOAP和GraphQL。</p>
-<p>以RPC（远程过程调用）规范为代表的架构风格允许在HTTP API的上下文中远程调用函数。当远程调用特定过程时，客户端通过为服务器生成特殊消息来获取大部分功能。服务器反序列化收到的消息[7]，启动请求的函数并且返回结果。gRPC是RPC的新版本，旨在解决上一版本规范存在的一些问题。gRPC还添加了许多新功能，例如负载均衡、消息追踪等。此外，这个新标准开始使用了protobufs的概念，并且运行在HTTP/2之上。Protobuf是一个proto文件，它是一个字典，数据在此基础上以特殊的二进制格式进行编码和解码。也就是说，它是一种新的序列化格式（JSON/XML的替代品），用于客户端和服务器之间的信息交换[8]。该创新允许在实时大量数据交换的环境中保持高性能，它也能够使用SSL/TLS、OAuth 2.0、身份认证用令牌、或者是你自己编写的安全身份认证实现。</p>
-<p>RPC（gRPC）的好处：</p>
-<ul>
-<li>简单的交互机制；</li>
-<li>添加函数并随后转换到对端的能力；</li>
-<li>高性能；</li>
-<li>与安全工具交互的能力。</li>
-</ul>
-<p>RPC（gRPC）的缺点：</p>
-<ul>
-<li>抽象程度低，导致重用困难；</li>
-<li>进行规格化较困难；</li>
-<li>在查询的自省上存在问题</li>
-<li>由于无法完全隐藏API实现的细节而降低了安全性</li>
-</ul>
-<p>RPC（gRPC）最适用于开发用于内部通信的高性能微服务[9]，以及为远程控制系统创建API，例如在物联网领域等。</p>
-<p>GraphQL是Facebook开发人员引入的另一个规范。GraphQL专注于图形格式的数据表示。与关系数据库中表格视图的创建者不同，GraphQL的开发人员借鉴了MongoDB等面向文档的数据库，开创了一种文档结构。该实现基于相互引用（边）的实体（节点）图。</p>
-<p>首先，构建一个方案来描述（使用SDL语言的特殊语法）预期响应中的确切查询和数据类型。具有这种指定方案的客户端，甚至能够在发送查询之前，就可以确保服务器对其有答案。在后端，操作根据方案进行解释，并以JSON格式发送响应以及请求的数据。因此，我们拥有一种基于查询方案的技术，可以从多个端点接收数据，并以查询发送者确定的查询方案做出单个响应。此外，GraphQL支持订阅机制，允许从Web服务器实时接收信息。</p>
-<p>GraphQL的好处：</p>
-<ul>
-<li>一个查询足以检索任何复杂的数据；</li>
-<li>使得特定类型的数据查询方案可行；</li>
-<li>有效地处理关联数据；</li>
-<li>具有详细的错误日志；</li>
-<li>查询可灵活定制（格式定义、分割、版本单一）。</li>
-</ul>
-<p>GraphQL的缺点：</p>
-<ul>
-<li>如果一个查询中有太多的嵌套字段，可能会降低性能；</li>
-<li>缓存困难；</li>
-<li>学习曲线高，需要SDL进行必要的处理。</li>
-</ul>
-<p>当你需要封装开发API的系统的复杂逻辑时，GraphQL是一个很好的选择，这在设计庞大的项目和微服务时很重要。此外，GraphQL通过优化单个消息的有效负载（payload），为有效处理移动设备（移动API）上的数据提供了机会。</p>
-]]></content>
-      <categories>
-        <category>理论学习</category>
-      </categories>
-      <tags>
-        <tag>Web</tag>
-        <tag>文献</tag>
-        <tag>Python</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>【模板】三分答案（2个）</title>
     <url>/%E3%80%90%E6%A8%A1%E6%9D%BF%E3%80%91%E4%B8%89%E5%88%86%E7%AD%94%E6%A1%88%EF%BC%882%E4%B8%AA%EF%BC%89/</url>
     <content><![CDATA[<p>三分答案，可以用来求解凹函数或者凸函数的最值问题。</p>
@@ -350,6 +350,30 @@
       <tags>
         <tag>算法</tag>
         <tag>模板</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>多线程release模式下访问同一个变量出错</title>
+    <url>/%E5%A4%9A%E7%BA%BF%E7%A8%8Brelease%E6%A8%A1%E5%BC%8F%E4%B8%8B%E8%AE%BF%E9%97%AE%E5%90%8C%E4%B8%80%E4%B8%AA%E5%8F%98%E9%87%8F%E5%87%BA%E9%94%99/</url>
+    <content><![CDATA[<h1 id="问题"><a class="markdownIt-Anchor" href="#问题"></a> 问题</h1>
+<p>在和队友一起调试项目时，队友在项目的某一个地方用到了多线程，主要是为了在保证主线程正常运行的情况下检测一个鼠标的点击事件，通过对于一个flag变量的判断从而进行暂停的功能。但是我在pull项目后本地调试时，却发现这个暂停点了之后可以暂停，可是再点继续的时候却无法继续，但是去询问队友他本地却运行正常。</p>
+<hr />
+<h1 id="解决"><a class="markdownIt-Anchor" href="#解决"></a> 解决</h1>
+<p>后来发现队友那边是使用的是debug模式，而我这里运行时使用的是release模式，可以看出又是一些ub行为导致的问题。<br />
+最后查阅了相关资料等等，发现了问题产生的原因是release模式下对于变量的存储进行了优化，因为程序本来是在点击暂停之后一直检测flag变量isPause是否为否，而由于该变量被频繁访问，所以可能会被优化到CPU中存储（register），这就导致了子线程对其的修改失效了，两者修改检测的不是同一个变量，所以导致了暂停后不能继续的bug。<br />
+解决方法就是通过volatile关键词进行修饰，避免被优化。<br />
+在多线程中若想通过一个公共的flag变量进行线程间的通信，记得要进行volatile修饰，避免编译器的优化。<br />
+<img src="../images/pasted-0.png" alt="upload successful" /></p>
+<hr />
+<h1 id="后续更新"><a class="markdownIt-Anchor" href="#后续更新"></a> 后续更新</h1>
+<p>后面了解到volatile其实不是很适用在这种场景里面（虽说在整个项目里面确实能够达到目的）。实际上更科学的做法是应该使用mutex或者atomic，尤其是在学习了操作系统之后，更是意识到对于这种共享资源，应该进行加锁，pv操作进行处理。同时，c++11也为我们提供了原子（atomic）数据类型，能够正确实现对于共享资源变量的访问，并且相比于加锁操作能够提高相当高的效率。而volatile貌似现在更多用于硬件、单片机层面（？</p>
+]]></content>
+      <categories>
+        <category>技术实践</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+        <tag>编译优化</tag>
       </tags>
   </entry>
   <entry>
@@ -560,45 +584,6 @@
       </tags>
   </entry>
   <entry>
-    <title>多线程release模式下访问同一个变量出错</title>
-    <url>/%E5%A4%9A%E7%BA%BF%E7%A8%8Brelease%E6%A8%A1%E5%BC%8F%E4%B8%8B%E8%AE%BF%E9%97%AE%E5%90%8C%E4%B8%80%E4%B8%AA%E5%8F%98%E9%87%8F%E5%87%BA%E9%94%99/</url>
-    <content><![CDATA[<h1 id="问题"><a class="markdownIt-Anchor" href="#问题"></a> 问题</h1>
-<p>在和队友一起调试项目时，队友在项目的某一个地方用到了多线程，主要是为了在保证主线程正常运行的情况下检测一个鼠标的点击事件，通过对于一个flag变量的判断从而进行暂停的功能。但是我在pull项目后本地调试时，却发现这个暂停点了之后可以暂停，可是再点继续的时候却无法继续，但是去询问队友他本地却运行正常。</p>
-<hr />
-<h1 id="解决"><a class="markdownIt-Anchor" href="#解决"></a> 解决</h1>
-<p>后来发现队友那边是使用的是debug模式，而我这里运行时使用的是release模式，可以看出又是一些ub行为导致的问题。<br />
-最后查阅了相关资料等等，发现了问题产生的原因是release模式下对于变量的存储进行了优化，因为程序本来是在点击暂停之后一直检测flag变量isPause是否为否，而由于该变量被频繁访问，所以可能会被优化到CPU中存储（register），这就导致了子线程对其的修改失效了，两者修改检测的不是同一个变量，所以导致了暂停后不能继续的bug。<br />
-解决方法就是通过volatile关键词进行修饰，避免被优化。<br />
-在多线程中若想通过一个公共的flag变量进行线程间的通信，记得要进行volatile修饰，避免编译器的优化。<br />
-<img src="../images/pasted-0.png" alt="upload successful" /></p>
-<hr />
-<h1 id="后续更新"><a class="markdownIt-Anchor" href="#后续更新"></a> 后续更新</h1>
-<p>后面了解到volatile其实不是很适用在这种场景里面（虽说在整个项目里面确实能够达到目的）。实际上更科学的做法是应该使用mutex或者atomic，尤其是在学习了操作系统之后，更是意识到对于这种共享资源，应该进行加锁，pv操作进行处理。同时，c++11也为我们提供了原子（atomic）数据类型，能够正确实现对于共享资源变量的访问，并且相比于加锁操作能够提高相当高的效率。而volatile貌似现在更多用于硬件、单片机层面（？</p>
-]]></content>
-      <categories>
-        <category>技术实践</category>
-      </categories>
-      <tags>
-        <tag>C++</tag>
-        <tag>编译优化</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>工程中对于默认参数使用的注意</title>
-    <url>/%E5%B7%A5%E7%A8%8B%E4%B8%AD%E5%AF%B9%E4%BA%8E%E9%BB%98%E8%AE%A4%E5%8F%82%E6%95%B0%E4%BD%BF%E7%94%A8%E7%9A%84%E6%B3%A8%E6%84%8F/</url>
-    <content><![CDATA[<p>这个主要是前几天在和队友一起合作写代码时遇到的一个bug，具体可以简化为我写了一个函数A，这个A中有一个参数是默认参数，我之前是在外部调用了这个函数，其实是对这个默认参数传入了变量的。但是后来队友在补充修改的时候，在他的那边的B函数中也调用了我的函数A，但是因为函数A不是他完成的，然后对于参数的含义不是很理解，然后最后一个参数因为是默认参数，所以不传参也不会出现报错等问题，所以就导致他在B函数中调用我的A函数时没有传参，始终都是默认参数。<br><br />
-这就导致了我后来pull以后运行发现无论我怎么改动传入A函数的中的参数结果都不会变（在外部也有调用A函数的部分），然后我就一直对着外部的这个A函数纠结，然后对A函数本身的实现debug，纠结了好久最后才发现是B函数中调用了A函数结果没有对这个默认参数传参，导致了结果一直不会变<br><br />
-这个事情主要是提醒之后在编写函数时，使用默认参数的时候要注意，防止其他人调用此函数时没有注意到，默认参数可以使用一个有初始值的外部变量传参代替。之后就是要注意做好模块化测试，防止自己的模块出现问题而导致其他人在运行的时候出现问题而摸不到头脑。</p>
-]]></content>
-      <categories>
-        <category>工程理念</category>
-      </categories>
-      <tags>
-        <tag>C++</tag>
-        <tag>多人合作</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>学习C++的一些忠告</title>
     <url>/%E5%AD%A6%E4%B9%A0C-%E7%9A%84%E4%B8%80%E4%BA%9B%E5%BF%A0%E5%91%8A/</url>
     <content><![CDATA[<p>因为自己也确实是在学习C++的过程中感到很迷茫，有时候也想放弃。之后偶然看到了这篇文章，觉得文章中提出的这50条忠告说的很有道理，在这里转载一下，希望以后再陷入迷茫低谷的时候可以用来激励自己。</p>
@@ -738,6 +723,21 @@
       </tags>
   </entry>
   <entry>
+    <title>工程中对于默认参数使用的注意</title>
+    <url>/%E5%B7%A5%E7%A8%8B%E4%B8%AD%E5%AF%B9%E4%BA%8E%E9%BB%98%E8%AE%A4%E5%8F%82%E6%95%B0%E4%BD%BF%E7%94%A8%E7%9A%84%E6%B3%A8%E6%84%8F/</url>
+    <content><![CDATA[<p>这个主要是前几天在和队友一起合作写代码时遇到的一个bug，具体可以简化为我写了一个函数A，这个A中有一个参数是默认参数，我之前是在外部调用了这个函数，其实是对这个默认参数传入了变量的。但是后来队友在补充修改的时候，在他的那边的B函数中也调用了我的函数A，但是因为函数A不是他完成的，然后对于参数的含义不是很理解，然后最后一个参数因为是默认参数，所以不传参也不会出现报错等问题，所以就导致他在B函数中调用我的A函数时没有传参，始终都是默认参数。<br><br />
+这就导致了我后来pull以后运行发现无论我怎么改动传入A函数的中的参数结果都不会变（在外部也有调用A函数的部分），然后我就一直对着外部的这个A函数纠结，然后对A函数本身的实现debug，纠结了好久最后才发现是B函数中调用了A函数结果没有对这个默认参数传参，导致了结果一直不会变<br><br />
+这个事情主要是提醒之后在编写函数时，使用默认参数的时候要注意，防止其他人调用此函数时没有注意到，默认参数可以使用一个有初始值的外部变量传参代替。之后就是要注意做好模块化测试，防止自己的模块出现问题而导致其他人在运行的时候出现问题而摸不到头脑。</p>
+]]></content>
+      <categories>
+        <category>工程理念</category>
+      </categories>
+      <tags>
+        <tag>C++</tag>
+        <tag>多人合作</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>排序中遇到的一个小陷阱</title>
     <url>/%E6%8E%92%E5%BA%8F%E4%B8%AD%E9%81%87%E5%88%B0%E7%9A%84%E4%B8%80%E4%B8%AA%E5%B0%8F%E9%99%B7%E9%98%B1/</url>
     <content><![CDATA[<p>我们都知道，C++STL中允许我们去重载&lt;，来实现自定义元素的比较。但我们在自定义比较时，我们要注意一些问题。首先就是，STL规定的&lt;是一种严格弱序关系，满足反自反性（f(x,x)为假），非对称性（f(x,y)与f(y,x)结果不同），传递性（f(x,y)为真，f(y,z)为真，则f(x,z)也为真），既需要满足即&lt;表达的关系是一种严格小于关系，而不能是小于等于。严格弱序关系保证了一些性质，即严格弱序的&lt;可以用来表达其他的运算符。</p>
@@ -856,7 +856,7 @@ a &gt;= b：!(a &lt; b)</p>
 <li>第二题10进制正整数转16进制，不许用库函数。除k取余倒着输出，用栈和递归都可以</li>
 <li>求一个自然数序列中下标连续且数值连续的递减序列的最大长度。从下标为1的地方开始往后扫一遍即可，每次和前一个值对比是不是比它小一，是的话序列长度++，不是的话更新答案，序列长度重置为一</li>
 <li>给一个字符串，可以在任意一个位置添加任意一个字符，问使其变为回文串的最小操作次数。考虑区间dp，对于<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo stretchy="false">[</mo><mi>i</mi><mo separator="true">,</mo><mi>j</mi><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">[i,j]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord mathdefault">i</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.05724em;">j</span><span class="mclose">]</span></span></span></span>的字符串来说，我们假设所有比其规模小的子问题全部得到了解决。当<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>s</mi><mo stretchy="false">[</mo><mi>i</mi><mo stretchy="false">]</mo><mo>=</mo><mo>=</mo><mi>s</mi><mo stretchy="false">[</mo><mi>j</mi><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">s[i]==s[j]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">s</span><span class="mopen">[</span><span class="mord mathdefault">i</span><span class="mclose">]</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span></span><span class="base"><span class="strut" style="height:0.36687em;vertical-align:0em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">s</span><span class="mopen">[</span><span class="mord mathdefault" style="margin-right:0.05724em;">j</span><span class="mclose">]</span></span></span></span>时，显然<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>d</mi><mi>p</mi><mo stretchy="false">[</mo><mi>i</mi><mo separator="true">,</mo><mi>j</mi><mo stretchy="false">]</mo><mo>=</mo><mi>d</mi><mi>p</mi><mo stretchy="false">[</mo><mi>i</mi><mo>+</mo><mn>1</mn><mo separator="true">,</mo><mi>j</mi><mo>−</mo><mn>1</mn><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">dp[i,j]=dp[i+1,j-1]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">d</span><span class="mord mathdefault">p</span><span class="mopen">[</span><span class="mord mathdefault">i</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.05724em;">j</span><span class="mclose">]</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">d</span><span class="mord mathdefault">p</span><span class="mopen">[</span><span class="mord mathdefault">i</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:0.85396em;vertical-align:-0.19444em;"></span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.05724em;">j</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">]</span></span></span></span>，且考虑边界不会使其更优。否则就是<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>s</mi><mo stretchy="false">[</mo><mi>i</mi><mo stretchy="false">]</mo><mo stretchy="false">!</mo><mo>=</mo><mi>s</mi><mo stretchy="false">[</mo><mi>j</mi><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">s[i]!=s[j]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">s</span><span class="mopen">[</span><span class="mord mathdefault">i</span><span class="mclose">]</span><span class="mclose">!</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right:0.2777777777777778em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">s</span><span class="mopen">[</span><span class="mord mathdefault" style="margin-right:0.05724em;">j</span><span class="mclose">]</span></span></span></span>时，我们需要在<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo stretchy="false">[</mo><mi>i</mi><mo separator="true">,</mo><mi>j</mi><mo>−</mo><mn>1</mn><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">[i,j-1]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord mathdefault">i</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.05724em;">j</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mclose">]</span></span></span></span>已经解决的基础上在最左边再加上一个<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>s</mi><mo stretchy="false">[</mo><mi>j</mi><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">s[j]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">s</span><span class="mopen">[</span><span class="mord mathdefault" style="margin-right:0.05724em;">j</span><span class="mclose">]</span></span></span></span>，或者在<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mo stretchy="false">[</mo><mi>i</mi><mo>+</mo><mn>1</mn><mo separator="true">,</mo><mi>j</mi><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">[i+1,j]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mopen">[</span><span class="mord mathdefault">i</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span><span class="mbin">+</span><span class="mspace" style="margin-right:0.2222222222222222em;"></span></span><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord">1</span><span class="mpunct">,</span><span class="mspace" style="margin-right:0.16666666666666666em;"></span><span class="mord mathdefault" style="margin-right:0.05724em;">j</span><span class="mclose">]</span></span></span></span>已经解决的基础上在最右边再加上一个<span class="katex"><span class="katex-mathml"><math><semantics><mrow><mi>s</mi><mo stretchy="false">[</mo><mi>i</mi><mo stretchy="false">]</mo></mrow><annotation encoding="application/x-tex">s[i]</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height:1em;vertical-align:-0.25em;"></span><span class="mord mathdefault">s</span><span class="mopen">[</span><span class="mord mathdefault">i</span><span class="mclose">]</span></span></span></span>，这样就可以继续完成回文串。因此可以得到dp方程：$$s[i]==s[j]时,dp[i][j]=dp[i+1][j-1]$$$$s[i]!=s[j]时,dp[i][j]=min(dp[i][j-1]+1,dp[i+1][j]+1)$$<br />
-在实现的时候需要注意边界条件是对角线元素全部都是0（单个字符一定回文），另外可以发现此题中的规模是长度，并且当前规模的状态转移都是从小规模而来，所以可以先枚举长度，再枚举起点。该题另外还有一个点就是在于题目中并没有给出搜索范围，而且第五题较为简单，所以我在考场上一直以为是个思维题或者线性dp。</li>
+在实现的时候需要注意边界条件是对角线元素全部都是0（单个字符一定回文），另外可以发现此题中的规模是长度，并且当前规模的状态转移都是从小规模而来，所以可以先枚举长度，再枚举起点。该题另外还有一个点就是在于题目中并没有给出数据范围，而且第五题较为简单，所以我在考场上一直以为是个思维题或者线性dp。</li>
 <li>求一个10*16的01图中最大的1联通区域的大小。裸的搜索题，对于每一个为值为1的格子开始进行搜索，并在搜索的过程中把格子置为0，返回并且更新答案，也可以用vis数组做。有一个点是该题的宏定义为row与col，而我自己dfs函数的形参也叫这两个名字，导致我一直报莫名其妙的错误，调了不少时间。</li>
 </ol>
 ]]></content>
