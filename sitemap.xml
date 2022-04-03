@@ -169,27 +169,6 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/tags/Web/</loc>
-    <lastmod>2022-04-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/tags/%E6%96%87%E7%8C%AE/</loc>
-    <lastmod>2022-04-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/tags/Python/</loc>
-    <lastmod>2022-04-03</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/tags/Codeforces/</loc>
     <lastmod>2022-04-03</lastmod>
     <changefreq>weekly</changefreq>
@@ -211,14 +190,14 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/tags/%E6%A8%A1%E6%9D%BF/</loc>
+    <loc>http://yoursite.com/tags/ACM/</loc>
     <lastmod>2022-04-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://yoursite.com/tags/ACM/</loc>
+    <loc>http://yoursite.com/tags/%E6%A8%A1%E6%9D%BF/</loc>
     <lastmod>2022-04-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -239,7 +218,21 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/tags/%E8%80%83%E7%A0%94/</loc>
+    <loc>http://yoursite.com/tags/Web/</loc>
+    <lastmod>2022-04-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/tags/%E6%96%87%E7%8C%AE/</loc>
+    <lastmod>2022-04-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/tags/Python/</loc>
     <lastmod>2022-04-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -259,17 +252,24 @@
     <priority>0.2</priority>
   </url>
   
+  <url>
+    <loc>http://yoursite.com/tags/%E8%80%83%E7%A0%94/</loc>
+    <lastmod>2022-04-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
 
   
   <url>
-    <loc>http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E5%AE%9E%E8%B7%B5/</loc>
+    <loc>http://yoursite.com/categories/%E7%90%86%E8%AE%BA%E5%AD%A6%E4%B9%A0/</loc>
     <lastmod>2022-04-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
   </url>
   
   <url>
-    <loc>http://yoursite.com/categories/%E7%90%86%E8%AE%BA%E5%AD%A6%E4%B9%A0/</loc>
+    <loc>http://yoursite.com/categories/%E6%8A%80%E6%9C%AF%E5%AE%9E%E8%B7%B5/</loc>
     <lastmod>2022-04-03</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
