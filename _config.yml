@@ -7,7 +7,7 @@
 
 # Site Settings
 title                    : "Xinyuan Liao"
-description              : "Xinyuan Liao academic homepage"
+description              : "Information and Telecommunication Engineering, School of Electronics and Information"
 repository               : "XinyuanLiao/xinyuanliao.github.io"
 google_scholar_stats_use_cdn : true
 
@@ -23,7 +23,7 @@ baidu_site_verification  :  # get baidu_site_verification from https://ziyuan.ba
 author:
   name             : "Xinyuan Liao"
   avatar           : "images/xinyuanliao.jpg"
-  bio              : "School of Electronics and Information, Northwestern Polytechnical University"
+  bio              : "Northwestern Polytechnical University (NWPU)"
   location         : "Xi'an, Shaanxi, China"
   employer         :
   pubmed           : 
