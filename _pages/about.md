@@ -25,8 +25,8 @@ My research interests include **physics-informed machine learning**, **reliabili
 
 
 # 🔥 News
-- *2023.12*: &nbsp;🎉🎉 A paper is accepted by the PCIM Europe 2024 Conference. _*(EI, Oral)*_
-- *2023.09*: &nbsp;🎉🎉 A paper is accepted by the Advanced Engineering Informatics. _*(SCI, Q1, IF=8.8)*_
+- *2023.12*: &nbsp;🎉🎉 A paper is accepted by the PCIM Europe 2024 Conference. _(EI, Oral)_
+- *2023.09*: &nbsp;🎉🎉 A paper is accepted by the Advanced Engineering Informatics. _(SCI, Q1, IF=8.8)_
 
 # 📝 Publications 
 
@@ -35,7 +35,7 @@ My research interests include **physics-informed machine learning**, **reliabili
 
 [Remaining useful life with self-attention assisted physics-informed neural network](https://doi.org/10.1016/j.aei.2023.102195)
 
-**Xinyuan Liao**, Shaowei Chen, Pengfei Wen, Shuai Zhao
+**Xinyuan Liao**, Shaowei Chen, Pengfei Wen, Shuai Zhao*
 
 [**Keywords**](https://scholar.google.com.hk/citations?view_op=view_citation&hl=zh-CN&user=IdfPU1UAAAAJ&citation_for_view=IdfPU1UAAAAJ:u5HHmVD_uO8C) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong>
 - Physics-Informed Neural Networks
