@@ -30,6 +30,20 @@ My research interests include **physics-informed machine learning**, **reliabili
 
 # 📝 Publications 
 
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">TechRxiv</div><img src='images/pfndm.png' alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[Explainable Neural Dynamics Models for Motor Temperature Prediction](https://doi.org/10.36227/techrxiv.24555889)
+
+**Xinyuan Liao**, Shaowei Chen, Yunxiang Long, Shuai Zhao*
+
+**Keywords**
+- Neural Dynamics Models
+- Stability Constraints
+- State-Space Models
+</div>
+</div>
+
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">Advanced Engineering Informatics</div><img src='images/aei.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
@@ -37,7 +51,7 @@ My research interests include **physics-informed machine learning**, **reliabili
 
 **Xinyuan Liao**, Shaowei Chen, Pengfei Wen, Shuai Zhao*
 
-[**Keywords**](https://scholar.google.com.hk/citations?view_op=view_citation&hl=zh-CN&user=IdfPU1UAAAAJ&citation_for_view=IdfPU1UAAAAJ:u5HHmVD_uO8C) <strong><span class='show_paper_citations' data='DhtAFkwAAAAJ:ALROH1vI_8AC'></span></strong>
+**Keywords**
 - Physics-Informed Neural Networks
 - Self-Attention
 - C-MAPSS
