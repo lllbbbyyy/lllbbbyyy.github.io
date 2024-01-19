@@ -25,6 +25,7 @@ My research interests include **physics-informed machine learning**, **reliabili
 
 
 # 🔥 News
+- *2024.01*: &nbsp;🎉🎉 Received the Student Travel Grant from the PCIM Europe 2024 Conference.
 - *2023.12*: &nbsp;🎉🎉 A paper is accepted by the PCIM Europe 2024 Conference. _(EI, Oral)_
 - *2023.09*: &nbsp;🎉🎉 A paper is accepted by the Advanced Engineering Informatics. _(SCI, Q1, IF=8.8)_
 
