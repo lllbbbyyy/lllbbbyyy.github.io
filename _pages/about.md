@@ -53,8 +53,8 @@ My research interests include **physics-informed machine learning**, **reliabili
 
 **Keywords**
 - Physics-Informed Neural Networks
-- Self-Attention
-- C-MAPSS
+- Attention Mechanism
+- Remaining Useful Life
 </div>
 </div>
 
