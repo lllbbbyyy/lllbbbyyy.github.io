@@ -23,7 +23,6 @@ My research interests include **physics-informed machine learning**, **reliabili
 
  My published paper can be accessed here <a href='https://scholar.google.com/citations?user=IdfPU1UAAAAJ&hl=zh-CN'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>.
 
-<script type="text/javascript" src="//rf.revolvermaps.com/0/0/6.js?i=54e0ojatafc&amp;m=7&amp;c=e63100&amp;cr1=ffffff&amp;f=arial&amp;l=0&amp;bv=90&amp;lx=-420&amp;ly=420&amp;hi=20&amp;he=7&amp;hc=a8ddff&amp;rs=80" async="async"></script>
 
 # 🔥 News
 - *2024.01*: &nbsp;🎉🎉 Received the Student Travel Grant from the PCIM Europe 2024 Conference.
@@ -71,4 +70,7 @@ My research interests include **physics-informed machine learning**, **reliabili
 
 # 📖 Educations
 - *2022.06 - (now)*, M.S. Northwestern Polytechnical University, Information and Telecommunication Engineering. 
-- *2018.09 - 2022.06*, B.S. Ocean University of China, Computer Science and Technology. 
+- *2018.09 - 2022.06*, B.S. Ocean University of China, Computer Science and Technology.
+
+# :door: Visitor Map
+<script type="text/javascript" src="//rf.revolvermaps.com/0/0/6.js?i=54e0ojatafc&amp;m=7&amp;c=e63100&amp;cr1=ffffff&amp;f=arial&amp;l=0&amp;bv=90&amp;lx=-420&amp;ly=420&amp;hi=20&amp;he=7&amp;hc=a8ddff&amp;rs=80" async="async"></script>
