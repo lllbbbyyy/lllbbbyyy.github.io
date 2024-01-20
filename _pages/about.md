@@ -17,6 +17,8 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
+<script type="text/javascript" id="clstr_globe" src="//clustrmaps.com/globe.js?d=YgKYIDnjSGpt1oqYT4oPzvdijV0Pd0iaiRK1CNf-o7g"></script>
+
 I received a B.S. degree in Computer Science and Technology from Ocean University of China, Qingdao, China, in 2022. I am currently working toward an M.S. degree in Information and Telecommunication Engineering at the School of Electronics and Information, Northwestern Polytechnical University, Xi'an, China.
 
 My research interests include **physics-informed machine learning**, **reliability engineering**, and **condition monitoring**.
