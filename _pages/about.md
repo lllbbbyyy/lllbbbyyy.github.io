@@ -19,9 +19,12 @@ redirect_from:
 
 I received a B.S. degree in Computer Science and Technology from Ocean University of China, Qingdao, China, in 2022. I am currently working toward an M.S. degree in Information and Telecommunication Engineering at the School of Electronics and Information, Northwestern Polytechnical University, Xi'an, China.
 
-My research interests include **physics-informed machine learning**, **reliability engineering**, and **condition monitoring**.
+My research interests include 
+- **physics-informed machine learning**
+- **reliability engineering**
+- **condition monitoring**
 
- My published paper can be accessed here <a href='https://scholar.google.com/citations?user=IdfPU1UAAAAJ&hl=zh-CN'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>.
+
 
 
 # 🔥 News
