@@ -17,14 +17,13 @@ redirect_from:
 
 <span class='anchor' id='about-me'></span>
 
-<script type="text/javascript" id="clustrmaps" src="//clustrmaps.com/map_v2.js?d=YgKYIDnjSGpt1oqYT4oPzvdijV0Pd0iaiRK1CNf-o7g&cl=ffffff&w=a"></script>
-
 I received a B.S. degree in Computer Science and Technology from Ocean University of China, Qingdao, China, in 2022. I am currently working toward an M.S. degree in Information and Telecommunication Engineering at the School of Electronics and Information, Northwestern Polytechnical University, Xi'an, China.
 
 My research interests include **physics-informed machine learning**, **reliability engineering**, and **condition monitoring**.
 
  My published paper can be accessed here <a href='https://scholar.google.com/citations?user=IdfPU1UAAAAJ&hl=zh-CN'><img src="https://img.shields.io/endpoint?url={{ url | url_encode }}&logo=Google%20Scholar&labelColor=f6f6f6&color=9cf&style=flat&label=citations"></a>.
 
+<script type="text/javascript" src="//rf.revolvermaps.com/0/0/6.js?i=54e0ojatafc&amp;m=7&amp;c=e63100&amp;cr1=ffffff&amp;f=arial&amp;l=0&amp;bv=90&amp;lx=-420&amp;ly=420&amp;hi=20&amp;he=7&amp;hc=a8ddff&amp;rs=80" async="async"></script>
 
 # 🔥 News
 - *2024.01*: &nbsp;🎉🎉 Received the Student Travel Grant from the PCIM Europe 2024 Conference.
