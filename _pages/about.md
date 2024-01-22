@@ -46,6 +46,9 @@ My research interests include
 - Neural Dynamics Models
 - Stability Constraints
 - State-Space Models
+
+[https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white](https://github.com/ms140429/Explainable-Neural-Dynamics-Model)
+
 </div>
 </div>
 
@@ -60,6 +63,9 @@ My research interests include
 - Physics-Informed Neural Networks
 - Attention Mechanism
 - Remaining Useful Life
+
+[https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white](https://github.com/XinyuanLiao/AttnPINN-for-RUL-Estimation)
+
 </div>
 </div>
 
