@@ -39,6 +39,7 @@ My research interests include
 <div class='paper-box-text' markdown="1">
 
 [Explainable Neural Dynamics Models for Motor Temperature Prediction](https://doi.org/10.36227/techrxiv.24555889)
+[https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white](https://github.com/ms140429/Explainable-Neural-Dynamics-Model)
 
 **Xinyuan Liao**, Shaowei Chen, Yunxiang Long, Shuai Zhao*
 
@@ -47,8 +48,6 @@ My research interests include
 - Stability Constraints
 - State-Space Models
 
-[https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white](https://github.com/ms140429/Explainable-Neural-Dynamics-Model)
-
 </div>
 </div>
 
@@ -56,6 +55,7 @@ My research interests include
 <div class='paper-box-text' markdown="1">
 
 [Remaining useful life with self-attention assisted physics-informed neural network](https://doi.org/10.1016/j.aei.2023.102195)
+[https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white](https://github.com/XinyuanLiao/AttnPINN-for-RUL-Estimation)
 
 **Xinyuan Liao**, Shaowei Chen, Pengfei Wen, Shuai Zhao*
 
@@ -64,7 +64,6 @@ My research interests include
 - Attention Mechanism
 - Remaining Useful Life
 
-[https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white](https://github.com/XinyuanLiao/AttnPINN-for-RUL-Estimation)
 
 </div>
 </div>
