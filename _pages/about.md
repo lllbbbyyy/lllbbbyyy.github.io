@@ -18,18 +18,18 @@ redirect_from:
 <span class='anchor' id='about-me'></span>
 
 # 🧍‍♂️ Biography
-I received a B.S. degree in Computer Science and Technology from Ocean University of China, Qingdao, China, in 2022. I am currently working toward an M.S. degree in Information and Telecommunication Engineering at the School of Electronics and Information, Northwestern Polytechnical University, Xi'an, China.
+I received a B.S. degree in Computer Science and Technology from [Ocean University of China](https://www.ouc.edu.cn/), Qingdao, China, in 2022. I am currently working toward an M.S. degree in Information and Telecommunication Engineering at the School of Electronics and Information, [Northwestern Polytechnical University](https://www.nwpu.edu.cn/), Xi'an, China.
 
 My research interests include 
-- **physics-informed machine learning**
-- **reliability engineering**
-- **condition monitoring**
+- **[Physics-Informed Machine Learning](https://scholar.google.com.hk/citations?view_op=search_authors&hl=zh-CN&mauthors=label:physics_informed_ml)**
+- **[Reliability Engineering](https://scholar.google.com.hk/citations?view_op=search_authors&hl=zh-CN&mauthors=label:reliability_engineering)**
+- **[Condition Monitoring](https://scholar.google.com.hk/citations?view_op=search_authors&hl=zh-CN&mauthors=label:condition_monitoring)**
 
 
 
 
 # 🔥 News
-- *2024.01*: &nbsp;🎉🎉 Received the Student Travel Grant from the PCIM Europe 2024 Conference.
+- *2024.01*: &nbsp;🎉🎉 Received the Student Travel Grant from the [PCIM Europe](https://pcim.mesago.com/nuernberg/en/conference.html) 2024 Conference.
 - *2023.12*: &nbsp;🎉🎉 A paper is accepted by the PCIM Europe 2024 Conference. _(EI, Oral)_
 - *2023.09*: &nbsp;🎉🎉 A paper is accepted by the Advanced Engineering Informatics. _(SCI, Q1, IF=8.8)_
 
@@ -69,7 +69,7 @@ My research interests include
 
 
 # 🎖 Honors and Awards
-- *2023.12*  PCIM Europe 2024 Conference, Student Travel Grant.
+- *2024.01*  PCIM Europe 2024 Conference, Student Travel Grant.
 - *2023.10*  Northwestern Polytechnical University, Second Prize Scholarship.
 - *2023.09*  The 14th Challenge Cup (Growth Challenge), Provincial First Prize.
 - *2022.10*  Northwestern Polytechnical University, First Prize Scholarship.
