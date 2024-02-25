@@ -77,7 +77,7 @@ My research interests include
 - *2021.10*  Ocean University of China, Model Student of Academic Records.
 
 # 📖 Educations
-- *2022.06 - (now)*, M.S. Northwestern Polytechnical University, Information and Telecommunication Engineering. 
+- *2022.06 - 2025.04*, M.S. Northwestern Polytechnical University, Information and Telecommunication Engineering. 
 - *2018.09 - 2022.06*, B.S. Ocean University of China, Computer Science and Technology.
 
 # 🗺️ Visitor Map
