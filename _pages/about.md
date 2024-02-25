@@ -34,10 +34,10 @@ My research interests include
 - *2023.09*: &nbsp;🎉🎉 A paper is accepted by the Advanced Engineering Informatics. _(SCI, Q1, IF=8.8)_
 
 # 📝 Publications 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">TechRxiv</div><img src='images/pfndm.png' alt="sym" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">TechRxiv</div><img src='images/roadmap.jpg' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-[Explainable Neural Dynamics Models for Motor Temperature Prediction](https://doi.org/10.36227/techrxiv.24555889)
+[Explainable Neural Dynamics Models for Electric Motor Temperature Estimation](https://doi.org/10.36227/techrxiv.24555889)
 [<img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" />](https://github.com/ms140429/Explainable-Neural-Dynamics-Model)
 
 **Xinyuan Liao**, Shaowei Chen, Yunxiang Long, Shuai Zhao*
