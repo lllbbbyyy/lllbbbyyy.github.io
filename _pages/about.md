@@ -34,6 +34,23 @@ My research interests include
 - *2023.09*: &nbsp;🎉🎉 A paper is accepted by the Advanced Engineering Informatics. _(SCI, Q1, IF=8.8)_
 
 # 📝 Publications 
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">arXiv</div><img src='images/PE-GPT.png' alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[PE-GPT: A Physics-Informed Interactive Large Language Model for Power Converter Modulation Design](https://arxiv.org/ftp/arxiv/papers/2403/2403.14059.pdf)
+
+Fanfan Lin, Junhua Liu, Xinze Li, Shuai Zhao, Bohui Zhao, Hao Ma, Xin Zhang, **Xinyuan Liao**
+
+**Keywords**
+- Power Converters
+- Large Language Model
+- Physics Informed
+- Neural Networks
+- Modulation Strategy 
+
+</div>
+</div>
+
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">TechRxiv</div><img src='images/roadmap.jpg' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
@@ -43,7 +60,8 @@ My research interests include
 **Xinyuan Liao**, Shaowei Chen, Yunxiang Long, Shuai Zhao*
 
 **Keywords**
-- Neural Dynamics Models
+- System Thermal Dynamics
+- Control-Oriented Modeling
 - Stability Constraints
 - State-Space Models
 
