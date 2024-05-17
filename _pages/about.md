@@ -44,8 +44,7 @@ Fanfan Lin, Junhua Liu, Xinze Li, Shuai Zhao, et al., **Xinyuan Liao**
 **Keywords**
 - Power Converters
 - Large Language Model
-- Physics Informed
-- Neural Networks
+- Physics-Informed Neural Networks
 - Modulation Strategy 
 
 </div>
