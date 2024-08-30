@@ -34,7 +34,23 @@ My research interests include
 - *2023.09*: &nbsp;🎉🎉 A paper is accepted by the Advanced Engineering Informatics. _(SCI, Q1, IF=8.8)_
 
 # 📝 Publications 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">arXiv 2024</div><img src='images/PE-GPT.png' alt="sym" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">PCIM Europe 2024</div><img src='images/frame.jpg' alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[gated recurrent units-assisted state-space modeling for electric vehicle temperature prediction](https://ieeexplore.ieee.org/document/10653772)
+
+**Xinyuan Liao**, Shaowei Chen, and Shuai Zhao*
+
+**Keywords**
+- Recurrent Neural Networks
+- Physics-Informed Machine Learning
+- EVs' Electrical System 
+
+</div>
+</div>
+
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">IEEE ECCE 2024</div><img src='images/PE-GPT.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [PE-GPT: A Physics-Informed Interactive Large Language Model for Power Converter Modulation Design](https://arxiv.org/ftp/arxiv/papers/2403/2403.14059.pdf)
@@ -86,6 +102,7 @@ Fanfan Lin, Junhua Liu, Xinze Li, Shuai Zhao, et al., **Xinyuan Liao**
 
 
 # 🎖 Honors and Awards
+- *2024.07*  The 19th Graduate Electronic Design Competition, Provincial Second Prize.
 - *2024.01*  PCIM Europe 2024 Conference, Student Travel Grant.
 - *2023.10*  Northwestern Polytechnical University, Second Prize Scholarship.
 - *2023.09*  The 14th Challenge Cup (Growth Challenge), Provincial First Prize.
