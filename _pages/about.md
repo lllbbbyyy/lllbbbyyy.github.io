@@ -37,7 +37,7 @@ My research interests include
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">PCIM Europe 2024</div><img src='images/frame.jpg' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-[gated recurrent units-assisted state-space modeling for electric vehicle temperature prediction](https://ieeexplore.ieee.org/document/10653772)
+[Gated recurrent units-assisted state-space modeling for electric vehicle temperature prediction](https://ieeexplore.ieee.org/document/10653772)
 
 **Xinyuan Liao**, Shaowei Chen, and Shuai Zhao*
 
