@@ -20,6 +20,8 @@ redirect_from:
 # 🧍‍♂️ Biography
 I received a B.S. degree in Computer Science and Technology from [Ocean University of China](https://www.ouc.edu.cn/), Qingdao, China, in 2022. I am currently working toward an M.S. degree in Information and Telecommunication Engineering at the School of Electronics and Information, [Northwestern Polytechnical University](https://www.nwpu.edu.cn/), Xi'an, China.
 
+I was the recipient of the National Scholarship for Postgraduate in Northwestern Polytechnical University 2024 and hold 5 Chinese invention patents.
+
 My research interests include 
 - **[Physics-Informed Machine Learning](https://scholar.google.com.hk/citations?view_op=search_authors&hl=zh-CN&mauthors=label:physics_informed_ml)**
 - **[Reliability Engineering](https://scholar.google.com.hk/citations?view_op=search_authors&hl=zh-CN&mauthors=label:reliability_engineering)**
@@ -29,6 +31,7 @@ My research interests include
 
 
 # 🔥 News
+- *2024.10*: &nbsp;🎉🎉 Received the National Scholarship for Postgraduate.
 - *2024.01*: &nbsp;🎉🎉 Received the Student Travel Grant from the [PCIM Europe](https://pcim.mesago.com/nuernberg/en/conference.html) 2024 Conference.
 - *2023.12*: &nbsp;🎉🎉 A paper is accepted by the PCIM Europe 2024 Conference. _(EI, Oral)_
 - *2023.09*: &nbsp;🎉🎉 A paper is accepted by the Advanced Engineering Informatics. _(SCI, Q1, IF=8.8)_
@@ -102,6 +105,9 @@ Fanfan Lin, Junhua Liu, Xinze Li, Shuai Zhao, et al., **Xinyuan Liao**
 
 
 # 🎖 Honors and Awards
+- *2024.10*  The National Scholarship for Postgraduate.
+- *2024.10*  Northwestern Polytechnical University, First Prize Scholarship.
+- *2024.08*  IELTS 6.5 (6.0)
 - *2024.07*  The 19th Graduate Electronic Design Competition, Provincial Second Prize.
 - *2024.01*  PCIM Europe 2024 Conference, Student Travel Grant.
 - *2023.10*  Northwestern Polytechnical University, Second Prize Scholarship.
