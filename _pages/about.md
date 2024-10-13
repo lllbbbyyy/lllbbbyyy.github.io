@@ -20,7 +20,7 @@ redirect_from:
 # 🧍‍♂️ Biography
 I received a B.S. degree in Computer Science and Technology from [Ocean University of China](https://www.ouc.edu.cn/), Qingdao, China, in 2022. I am currently working toward an M.S. degree in Information and Telecommunication Engineering at the School of Electronics and Information, [Northwestern Polytechnical University](https://www.nwpu.edu.cn/), Xi'an, China.
 
-I was the recipient of the National Scholarship for Postgraduate in Northwestern Polytechnical University 2024 and hold 5 Chinese invention patents.
+I was the recipient of the National Scholarship for Postgraduate at Northwestern Polytechnical University in 2024 and hold 5 Chinese invention patents.
 
 My research interests include 
 - **[Physics-Informed Machine Learning](https://scholar.google.com.hk/citations?view_op=search_authors&hl=zh-CN&mauthors=label:physics_informed_ml)**
