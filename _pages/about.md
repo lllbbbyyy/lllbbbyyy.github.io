@@ -18,7 +18,7 @@ redirect_from:
 <span class='anchor' id='about-me'></span>
 
 # 🧍‍♂️ Biography
-I received a B.S. degree in Computer Science and Technology from [Ocean University of China](https://www.ouc.edu.cn/), Qingdao, China, in 2022. I am currently working toward an M.S. degree in Information and Telecommunication Engineering at the School of Electronics and Information, [Northwestern Polytechnical University](https://www.nwpu.edu.cn/), Xi'an, China.
+I received the B.S. degree in Computer Science and Technology from [Tongji University](https://www.tongji.edu.cn/), Shanghai, China, in 2022. I am currently working toward the Eng.D. degree in Computer Science and Technology, [University of Science and Technology of China](https://www.ustc.edu.cn/), Suzhou, Jiangsu, China.
 
 I was the recipient of the National Scholarship for Postgraduate at Northwestern Polytechnical University in 2024 and hold 5 Chinese invention patents.
 
@@ -117,8 +117,8 @@ Fanfan Lin, Junhua Liu, Xinze Li, Shuai Zhao, et al., **Xinyuan Liao**
 - *2021.10*  Ocean University of China, Model Student of Academic Records.
 
 # 📖 Educations
-- *2022.06 - 2025.04*, M.S. Northwestern Polytechnical University, Information and Telecommunication Engineering. 
-- *2018.09 - 2022.06*, B.S. Ocean University of China, Computer Science and Technology.
+- *2022.09 - 2027.06*, Eng.D. University of Science and Technology of China, Computer Science and Technology. 
+- *2018.09 - 2022.06*, B.S. Tongji University, Computer Science and Technology.
 
 # 🗺️ Visitor Map
 <script type="text/javascript" src="//rf.revolvermaps.com/0/0/6.js?i=54e0ojatafc&amp;m=7&amp;c=e63100&amp;cr1=ffffff&amp;f=arial&amp;l=0&amp;bv=90&amp;lx=-420&amp;ly=420&amp;hi=20&amp;he=7&amp;hc=a8ddff&amp;rs=80" async="async"></script>
