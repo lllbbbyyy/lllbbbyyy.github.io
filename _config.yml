@@ -6,9 +6,9 @@
 # `jekyll serve`. If you change this file, please restart the server process.
 
 # Site Settings
-title                    : "Xinyuan Liao"
-description              : "Master Candidate & IEEE Student Member"
-repository               : "XinyuanLiao/xinyuanliao.github.io"
+title                    : "Boyu Li"
+description              : "Doctor Candidate"
+repository               : "lllbbbyyy/lllbbbyyy.github.io"
 google_scholar_stats_use_cdn : False
 
 # google analytics
@@ -21,15 +21,15 @@ baidu_site_verification  :  # get baidu_site_verification from https://ziyuan.ba
 
 # Site Author
 author:
-  name             : "Xinyuan Liao"
-  avatar           : "images/xinyuanliao.jpg"
-  bio              : "Northwestern Polytechnical University (NWPU)"
-  location         : "Xi'an, Shaanxi, China"
+  name             : "Boyu Li"
+  avatar           : "images/boyuli.jpg"
+  bio              : "University of Science and Technology of China (USTC)"
+  location         : "Suzhou, Jiangsu, China"
   employer         :
   pubmed           : 
-  googlescholar    : "https://scholar.google.com/citations?user=IdfPU1UAAAAJ"
-  email            : "xnyuanliao@gmail.com"
-  researchgate     : "https://www.researchgate.net/profile/Xinyuan-Liao-4"
+  googlescholar    : "https://scholar.google.com/citations?user=f-eKs4oAAAAJ"
+  email            : "llbbyy@mail.ustc.edu.cn"
+  researchgate     : 
   uri              :
   bitbucket        :
   codepen          :
@@ -37,7 +37,7 @@ author:
   flickr           :
   facebook         :
   foursquare       :
-  github           : "XinyuanLiao"
+  github           : "lllbbbyyy"
   google_plus      :
   keybase          :
   instagram        :
@@ -45,7 +45,7 @@ author:
   lastfm           :
   linkedin         : # e.g., "linkedin username"
   dblp             : # e.g., "https://dblp.org/pid/xx/xxxx.html"
-  orcid            : "https://orcid.org/0009-0001-2431-3082"
+  orcid            : "https://orcid.org/0009-0001-2796-2686"
   pinterest        :
   soundcloud       :
   stackoverflow    : # http://stackoverflow.com/users/123456/username
