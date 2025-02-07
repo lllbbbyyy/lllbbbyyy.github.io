@@ -20,84 +20,92 @@ redirect_from:
 # 🧍‍♂️ Biography
 I received the B.S. degree in Computer Science and Technology from [Tongji University](https://www.tongji.edu.cn/), Shanghai, China, in 2022. I am currently working toward the Eng.D. degree in Computer Science and Technology, [University of Science and Technology of China](https://www.ustc.edu.cn/), Suzhou, Jiangsu, China.
 
-I was the recipient of the National Scholarship for Postgraduate at Northwestern Polytechnical University in 2024 and hold 5 Chinese invention patents.
+I was the recipient of the National Scholarship for Postgraduate at University of Science and Technology of China in 2023 and hold 1 Chinese invention patents.
 
 My research interests include 
-- **[Physics-Informed Machine Learning](https://scholar.google.com.hk/citations?view_op=search_authors&hl=zh-CN&mauthors=label:physics_informed_ml)**
-- **[Reliability Engineering](https://scholar.google.com.hk/citations?view_op=search_authors&hl=zh-CN&mauthors=label:reliability_engineering)**
-- **[Condition Monitoring](https://scholar.google.com.hk/citations?view_op=search_authors&hl=zh-CN&mauthors=label:condition_monitoring)**
+- **[Chiplet](https://scholar.google.com/citations?view_op=search_authors&mauthors=label:chiplet)**
+- **[Design Space Exploration](https://scholar.google.com/citations?view_op=search_authors&mauthors=label:design_space_exploration)**
+- **[Deep Learning System](https://scholar.google.com/citations?view_op=search_authors&mauthors=label:deep_learning_system)**
 
 
 
 
 # 🔥 News
-- *2024.10*: &nbsp;🎉🎉 Received the National Scholarship for Postgraduate.
-- *2024.01*: &nbsp;🎉🎉 Received the Student Travel Grant from the [PCIM Europe](https://pcim.mesago.com/nuernberg/en/conference.html) 2024 Conference.
-- *2023.12*: &nbsp;🎉🎉 A paper is accepted by the PCIM Europe 2024 Conference. _(EI, Oral)_
-- *2023.09*: &nbsp;🎉🎉 A paper is accepted by the Advanced Engineering Informatics. _(SCI, Q1, IF=8.8)_
+
+- *2025.01*: &nbsp;🎉🎉 A paper is accepted by the IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems (TCAD). _(CCF A)_
+- *2024.07*: &nbsp;🎉🎉 A paper is accepted by the IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems (TCAD). _(CCF A)_
+- *2024.02*: &nbsp;🎉🎉 A paper is accepted by the Proceedings of the 61st ACM/IEEE Design Automation Conference (DAC). _(CCF A)_
+- *2023.11*: &nbsp;🎉🎉 A paper is accepted by the IEEE Transactions on Vehicular Technology (TVT).
+- *2023.10*: &nbsp;🎉🎉 Received the National Scholarship for Postgraduate.
 
 # 📝 Publications 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">PCIM Europe 2024</div><img src='images/frame.jpg' alt="sym" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Magnifier</div><img src='images/Magnifier.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-[Gated recurrent units-assisted state-space modeling for electric vehicle temperature prediction](https://ieeexplore.ieee.org/document/10653772)
+[Magnifier: A Chiplet Feature-Aware Test Case Generation Method for Deep Learning Accelerators](https://ieeexplore.ieee.org/document/10836817)
 
-**Xinyuan Liao**, Shaowei Chen, and Shuai Zhao*
+**Boyu Li**, Zongwei Zhu*, et al. 
 
 **Keywords**
-- Recurrent Neural Networks
-- Physics-Informed Machine Learning
-- EVs' Electrical System 
+- Dataflow Optimization
+- Generative Adversarial Network (GAN)
+- Multichiplet Accelerators
+- Test Case Generation
 
 </div>
 </div>
 
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">IEEE ECCE 2024</div><img src='images/PE-GPT.png' alt="sym" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Arch2End</div><img src='images/Arch2end.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-[PE-GPT: A Physics-Informed Interactive Large Language Model for Power Converter Modulation Design](https://arxiv.org/ftp/arxiv/papers/2403/2403.14059.pdf)
+[Arch2End: Two-Stage Unified System-Level Modeling for Heterogeneous Intelligent Devices](https://ieeexplore.ieee.org/document/10745851)
 
-Fanfan Lin, Junhua Liu, Xinze Li, Shuai Zhao, et al., **Xinyuan Liao**
+Weihong Liu, Zongwei Zhu*, **Boyu Li**, et al.
 
 **Keywords**
-- Power Converters
-- Large Language Model
-- Physics-Informed Neural Networks
-- Modulation Strategy 
+- Device Grouping
+- Distributed Embedded System (DES)
+- End-to-end Inference
+- Hardware Architecture
+- Heterogeneous Device Modeling
+- Latency Prediction
+- Scheduling
 
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">TechRxiv 2023</div><img src='images/roadmap.jpg' alt="sym" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">PowerLens</div><img src='images/PowerLens.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-[Explainable Neural Dynamics Models for Electric Motor Temperature Estimation](https://doi.org/10.36227/techrxiv.24555889)
-[<img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" />](https://github.com/ms140429/Explainable-Neural-Dynamics-Model)
+[PowerLens: An Adaptive DVFS Framework for Optimizing Energy Efficiency in Deep Neural Networks](https://dl.acm.org/doi/abs/10.1145/3649329.3655956)
 
-**Xinyuan Liao**, Shaowei Chen, Yunxiang Long, Shuai Zhao*
+Jiawei Geng, Zongwei Zhu*, Weihong Liu, Xuehai Zhou, **Boyu Li**
 
 **Keywords**
-- System Thermal Dynamics
-- Control-Oriented Modeling
-- Stability Constraints
-- State-Space Models
+- DNNs
+- Energy Efficiency
+- Adaptive DVFS
+- Power Characterization
 
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Advanced Engineering Informatics 2023</div><img src='images/aei.png' alt="sym" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">MultiRuler</div><img src='images/MultiRuler.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-[Remaining useful life with self-attention assisted physics-informed neural network](https://doi.org/10.1016/j.aei.2023.102195)
-[<img src="https://img.shields.io/badge/GitHub-100000?style=for-the-badge&logo=github&logoColor=white" />](https://github.com/XinyuanLiao/AttnPINN-for-RUL-Estimation)
+[MultiRuler: A Multi-Dimensional Resource Modeling Method for Embedded Intelligent Systems of Autonomous Driving](https://ieeexplore.ieee.org/document/10354401)
 
-**Xinyuan Liao**, Shaowei Chen, Pengfei Wen, Shuai Zhao*
+Youqing Xu, **Boyu Li**(co-first author), Zongwei Zhu*, et al.
 
 **Keywords**
-- Physics-Informed Neural Networks
-- Attention Mechanism
-- Remaining Useful Life
+- Autonomous Driving
+- Resource Modeling
+- Embedded Intelligent Devices
+- Artificial Intelligence
+- Computing Performance
+- Memory Usage
+- Power Consumption
 
 
 </div>
@@ -105,20 +113,17 @@ Fanfan Lin, Junhua Liu, Xinze Li, Shuai Zhao, et al., **Xinyuan Liao**
 
 
 # 🎖 Honors and Awards
-- *2024.10*  The National Scholarship for Postgraduate.
-- *2024.10*  Northwestern Polytechnical University, First Prize Scholarship.
-- *2024.08*  IELTS 6.5 (6.0)
-- *2024.07*  The 19th Graduate Electronic Design Competition, Provincial Second Prize.
-- *2024.01*  PCIM Europe 2024 Conference, Student Travel Grant.
-- *2023.10*  Northwestern Polytechnical University, Second Prize Scholarship.
-- *2023.09*  The 14th Challenge Cup (Growth Challenge), Provincial First Prize.
-- *2022.10*  Northwestern Polytechnical University, First Prize Scholarship.
-- *2021.10*  Ocean University of China, First Prize Scholarship.
-- *2021.10*  Ocean University of China, Model Student of Academic Records.
+- *2023.10*  National Scholarship.
+- *2022.11*  ICPC Asia Regional Contest, Bronze Medal.
+- *2021.08*  National Finals of the National College IoT Design Competition, First Prize.
+- *2021.05*  China Collegiate Programming Contest - Team Ladder Tournament, Second Prize (Individual).
+- *2021.04*  ICPC Asia Regional Contest, Bronze Medal.
+- *2021.03*  National College Student Innovation Training Program Project, Outstanding Completion.
+- *2020.10*  National Endeavor Scholarship.
+- *2020.10*  CCF Collegiate Computer Systems and Programming Competition (East China Region), Bronze Medal.
+- *2020.09*  CCF-CSP Computer Software Proficiency Certification, Score of 340 (Top 1.5%).
 
 # 📖 Educations
 - *2022.09 - 2027.06*, Eng.D. University of Science and Technology of China, Computer Science and Technology. 
 - *2018.09 - 2022.06*, B.S. Tongji University, Computer Science and Technology.
 
-# 🗺️ Visitor Map
-<script type="text/javascript" src="//rf.revolvermaps.com/0/0/6.js?i=54e0ojatafc&amp;m=7&amp;c=e63100&amp;cr1=ffffff&amp;f=arial&amp;l=0&amp;bv=90&amp;lx=-420&amp;ly=420&amp;hi=20&amp;he=7&amp;hc=a8ddff&amp;rs=80" async="async"></script>
