@@ -27,7 +27,7 @@ My research interests include:
 - **[Design Space Exploration](https://scholar.google.com/citations?view_op=search_authors&mauthors=label:design_space_exploration)**
 - **[Deep Learning System](https://scholar.google.com/citations?view_op=search_authors&mauthors=label:deep_learning_system)**
 
-You can view my Chinese resume here: [Resume](./resume-boyuli.pdf)
+You can view my Chinese resume here: [Resume](./_pages/resume-boyuli.pdf)
 
 
 # 🔥 News
@@ -48,7 +48,7 @@ You can view my Chinese resume here: [Resume](./resume-boyuli.pdf)
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">Magnifier</div><img src='images/Magnifier.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-[Magnifier: A Chiplet Feature-Aware Test Case Generation Method for Deep Learning Accelerators](https://ieeexplore.ieee.org/document/10836817)
+[Magnifier: A Chiplet Feature-Aware Test Case Generation Method for Deep Learning Accelerators](https://ieeexplore.ieee.org/document/10836817). TCAD 2025.
 
 **Boyu Li**, Zongwei Zhu*, et al. 
 
@@ -61,46 +61,10 @@ You can view my Chinese resume here: [Resume](./resume-boyuli.pdf)
 </div>
 </div>
 
-
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Arch2End</div><img src='images/Arch2end.png' alt="sym" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
-
-[Arch2End: Two-Stage Unified System-Level Modeling for Heterogeneous Intelligent Devices](https://ieeexplore.ieee.org/document/10745851)
-
-Weihong Liu, Zongwei Zhu*, **Boyu Li**, et al.
-
-**Keywords**
-- Device Grouping
-- Distributed Embedded System (DES)
-- End-to-end Inference
-- Hardware Architecture
-- Heterogeneous Device Modeling
-- Latency Prediction
-- Scheduling
-
-</div>
-</div>
-
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">PowerLens</div><img src='images/PowerLens.png' alt="sym" width="100%"></div></div>
-<div class='paper-box-text' markdown="1">
-
-[PowerLens: An Adaptive DVFS Framework for Optimizing Energy Efficiency in Deep Neural Networks](https://dl.acm.org/doi/abs/10.1145/3649329.3655956)
-
-Jiawei Geng, Zongwei Zhu*, Weihong Liu, Xuehai Zhou, **Boyu Li**
-
-**Keywords**
-- DNNs
-- Energy Efficiency
-- Adaptive DVFS
-- Power Characterization
-
-</div>
-</div>
-
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">MultiRuler</div><img src='images/MultiRuler.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-[MultiRuler: A Multi-Dimensional Resource Modeling Method for Embedded Intelligent Systems of Autonomous Driving](https://ieeexplore.ieee.org/document/10354401)
+[MultiRuler: A Multi-Dimensional Resource Modeling Method for Embedded Intelligent Systems of Autonomous Driving](https://ieeexplore.ieee.org/document/10354401). TVT 2024.
 
 Youqing Xu, **Boyu Li**(co-first author), Zongwei Zhu*, et al.
 
@@ -117,9 +81,78 @@ Youqing Xu, **Boyu Li**(co-first author), Zongwei Zhu*, et al.
 </div>
 </div>
 
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Arch2End</div><img src='images/Arch2end.png' alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[Arch2End: Two-Stage Unified System-Level Modeling for Heterogeneous Intelligent Devices](https://ieeexplore.ieee.org/document/10745851). TCAD 2025.
+
+Weihong Liu, Zongwei Zhu*, **Boyu Li**, et al.
+
+**Keywords**
+- Device Grouping
+- Distributed Embedded System (DES)
+- End-to-end Inference
+- Hardware Architecture
+- Heterogeneous Device Modeling
+- Latency Prediction
+- Scheduling
+
+</div>
+</div>
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">MP3</div><img src='images/MP3.png' alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[MP3: Mixed-Precision Pipeline Parallelism Framework for Heterogeneous Edge Devices](https://ieeexplore.ieee.org/abstract/document/11389853). TCAD 2026.
+
+Yi Xiong, Weihong Liu, **Boyu Li**, et al. 
+
+**Keywords**
+- Edge Computing
+- Pipeline Parallelism
+- Post Training Quantization
+- Latency Modeling
+- Accuracy Proxy
+
+</div>
+</div>
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">AsyncGrid</div><img src='images/AsyncGrid.png' alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[AsyncGrid: An Intra- and Inter-Layer Asynchronous Hybrid Parallelism System for Responsive Edge LLM Inference](https://ieeexplore.ieee.org/abstract/document/11389853). TCAD 2026.
+
+Yi Xiong, Rui Zhang, Yulong Zu, Weihong Liu, Zongwei Zhu*, Jiawei Geng, **Boyu Li**, et al. 
+
+**Keywords**
+- LLM Inference
+- Edge Computing
+- Model Parallelism
+- Response Latency
+
+</div>
+</div>
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">PowerLens</div><img src='images/PowerLens.png' alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[PowerLens: An Adaptive DVFS Framework for Optimizing Energy Efficiency in Deep Neural Networks](https://dl.acm.org/doi/abs/10.1145/3649329.3655956). DAC 2024.
+
+Jiawei Geng, Zongwei Zhu*, Weihong Liu, Xuehai Zhou, **Boyu Li**
+
+**Keywords**
+- DNNs
+- Energy Efficiency
+- Adaptive DVFS
+- Power Characterization
+
+</div>
+</div>
+
 
 # 🎖 Honors and Awards
-- *2023.10*  National Scholarship.
+- *2025.03*  Suzhou Industrial Park Scholarship.
+- *2023.10*  **National Scholarship**.
 - *2022.11*  ICPC Asia Regional Contest, Bronze Medal.
 - *2021.08*  National Finals of the National College IoT Design Competition, First Prize.
 - *2021.05*  China Collegiate Programming Contest - Team Ladder Tournament, Second Prize (Individual).
