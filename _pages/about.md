@@ -22,16 +22,22 @@ I received the B.S. degree in Computer Science and Technology from [Tongji Unive
 
 I was the recipient of the National Scholarship for Postgraduate at University of Science and Technology of China in 2023 and hold 1 Chinese invention patents.
 
-My research interests include 
+My research interests include:  
 - **[Chiplet](https://scholar.google.com/citations?view_op=search_authors&mauthors=label:chiplet)**
 - **[Design Space Exploration](https://scholar.google.com/citations?view_op=search_authors&mauthors=label:design_space_exploration)**
 - **[Deep Learning System](https://scholar.google.com/citations?view_op=search_authors&mauthors=label:deep_learning_system)**
 
-
+You can view my Chinese resume here: [Resume](./resume-boyuli.pdf)
 
 
 # 🔥 News
 
+- *2026.03*: &nbsp;🎉🎉 A paper is accepted by the Proceedings of the 63th ACM/IEEE Design Automation Conference (DAC). _(CCF A)_
+- *2026.02*: &nbsp;🎉🎉 A paper is accepted by the IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems (TCAD). _(CCF A)_
+- *2025.11*: &nbsp;🎉🎉 A paper is accepted by the the Fortieth AAAI Conference on Artificial Intelligence (AAAI). _(CCF A)_
+- *2025.10*: &nbsp;🎉🎉 A paper is accepted by the IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems (TCAD). _(CCF A)_
+- *2025.01*: &nbsp;🎉🎉 A paper is accepted by the IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems (TCAD). _(CCF A)_
+- *2024.07*: &nbsp;🎉🎉 A paper is accepted by the IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems (TCAD). _(CCF A)_
 - *2025.01*: &nbsp;🎉🎉 A paper is accepted by the IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems (TCAD). _(CCF A)_
 - *2024.07*: &nbsp;🎉🎉 A paper is accepted by the IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems (TCAD). _(CCF A)_
 - *2024.02*: &nbsp;🎉🎉 A paper is accepted by the Proceedings of the 61st ACM/IEEE Design Automation Conference (DAC). _(CCF A)_
