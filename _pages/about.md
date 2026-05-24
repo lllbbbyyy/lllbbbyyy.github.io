@@ -120,7 +120,7 @@ Yi Xiong, Weihong Liu, **Boyu Li**, et al.
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">PPFL</div><img src='images/PPFL.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
-[PPFL: AParameter Behavior-Driven Plug-in Personalization Engine for Federated Learning](https://ojs.aaai.org/index.php/AAAI/article/view/39073). AAAI 2026.
+[PPFL: A Parameter Behavior-Driven Plug-in Personalization Engine for Federated Learning](https://ojs.aaai.org/index.php/AAAI/article/view/39073). AAAI 2026.
 
 Qianyue Cao, Zongwei Zhu, Zirui Lian, Rui Zhang, **Boyu Li**, et al.
 
