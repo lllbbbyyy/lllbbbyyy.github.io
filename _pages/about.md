@@ -18,7 +18,7 @@ redirect_from:
 <span class='anchor' id='about-me'></span>
 
 # 🧍‍♂️ Biography
-I received the B.S. degree in Computer Science and Technology from [Tongji University](https://www.tongji.edu.cn/), Shanghai, China, in 2022. I am currently working toward the Eng.D. degree in Computer Science and Technology, [University of Science and Technology of China](https://www.ustc.edu.cn/), Suzhou, Jiangsu, China.
+I received the B.E. degree in Computer Science and Technology from [Tongji University](https://www.tongji.edu.cn/), Shanghai, China, in 2022. I am currently working toward the Eng.D. degree in Computer Science and Technology, [University of Science and Technology of China](https://www.ustc.edu.cn/), Suzhou, Jiangsu, China.
 
 I was the recipient of the National Scholarship for Postgraduate at University of Science and Technology of China in 2023 and hold 1 Chinese invention patents.
 
