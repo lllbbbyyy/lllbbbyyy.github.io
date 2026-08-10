@@ -179,5 +179,5 @@ Jiawei Geng, Zongwei Zhu*, Weihong Liu, Xuehai Zhou, **Boyu Li**
 
 # 📖 Educations
 - *2022.09 - 2027.06*, Eng.D. University of Science and Technology of China, Computer Science and Technology. 
-- *2018.09 - 2022.06*, B.S. Tongji University, Computer Science and Technology.
+- *2018.09 - 2022.06*, B.E. Tongji University, Computer Science and Technology.
 
