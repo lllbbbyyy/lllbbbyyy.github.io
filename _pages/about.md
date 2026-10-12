@@ -32,7 +32,7 @@ You can view my Chinese resume here: [Resume](./_pages/resume-boyuli.pdf)
 
 # 🔥 News
 
-- *2026.03*: &nbsp;🎉🎉 A paper is accepted by the Proceedings of the 63th ACM/IEEE Design Automation Conference (DAC). _(CCF A)_
+- *2026.09*: &nbsp;🎉🎉 A paper is accepted by the Fortieth Annual Conference on Neural Information Processing Systems (NeurIPS). _(CCF A)_
 - *2026.02*: &nbsp;🎉🎉 A paper is accepted by the IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems (TCAD). _(CCF A)_
 - *2025.11*: &nbsp;🎉🎉 A paper is accepted by the the Fortieth AAAI Conference on Artificial Intelligence (AAAI). _(CCF A)_
 - *2025.10*: &nbsp;🎉🎉 A paper is accepted by the IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems (TCAD). _(CCF A)_
@@ -117,12 +117,25 @@ Yi Xiong, Weihong Liu, **Boyu Li**, et al.
 </div>
 </div>
 
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">BP-FedPEFT</div><img src='images/BP-FedPEFT.png' alt="sym" width="100%"></div></div>
+<div class='paper-box-text' markdown="1">
+
+[Memory-Efficient Federated Fine-Tuning of LLMs via Block-wise Progressive Training](https://neurips.cc/Conferences/2026/Schedule?showEvent=149884). NeurIPS 2026.
+
+Qianyue Cao, Zongwei Zhu*, **Boyu Li**, et al.
+
+**Keywords**
+- Federated Learning
+
+</div>
+</div>
+
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">PPFL</div><img src='images/PPFL.png' alt="sym" width="100%"></div></div>
 <div class='paper-box-text' markdown="1">
 
 [PPFL: A Parameter Behavior-Driven Plug-in Personalization Engine for Federated Learning](https://ojs.aaai.org/index.php/AAAI/article/view/39073). AAAI 2026.
 
-Qianyue Cao, Zongwei Zhu, Zirui Lian, Rui Zhang, **Boyu Li**, et al.
+Qianyue Cao, Zongwei Zhu*, Zirui Lian, Rui Zhang, **Boyu Li**, et al.
 
 **Keywords**
 - Personalized Federated Learning
