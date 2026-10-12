@@ -38,8 +38,6 @@ You can view my Chinese resume here: [Resume](./_pages/resume-boyuli.pdf)
 - *2025.10*: &nbsp;🎉🎉 A paper is accepted by the IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems (TCAD). _(CCF A)_
 - *2025.01*: &nbsp;🎉🎉 A paper is accepted by the IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems (TCAD). _(CCF A)_
 - *2024.07*: &nbsp;🎉🎉 A paper is accepted by the IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems (TCAD). _(CCF A)_
-- *2025.01*: &nbsp;🎉🎉 A paper is accepted by the IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems (TCAD). _(CCF A)_
-- *2024.07*: &nbsp;🎉🎉 A paper is accepted by the IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems (TCAD). _(CCF A)_
 - *2024.02*: &nbsp;🎉🎉 A paper is accepted by the Proceedings of the 61st ACM/IEEE Design Automation Conference (DAC). _(CCF A)_
 - *2023.11*: &nbsp;🎉🎉 A paper is accepted by the IEEE Transactions on Vehicular Technology (TVT).
 - *2023.10*: &nbsp;🎉🎉 Received the National Scholarship for Postgraduate.
