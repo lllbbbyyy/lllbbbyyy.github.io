@@ -123,7 +123,9 @@ Yi Xiong, Weihong Liu, **Boyu Li**, et al.
 Qianyue Cao, Zongwei Zhu*, **Boyu Li**, et al.
 
 **Keywords**
-- Federated Learning
+- Federated Fine-Tuning
+- Memory-efficient computing
+- Progressive training
 
 </div>
 </div>
