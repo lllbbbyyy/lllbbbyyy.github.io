@@ -43,7 +43,7 @@ You can view my Chinese resume here: [Resume](./_pages/resume-boyuli.pdf)
 - *2023.10*: &nbsp;🎉🎉 Received the National Scholarship for Postgraduate.
 
 # 📝 Publications 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Magnifier</div><img src='images/Magnifier.png' alt="sym" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Magnifier</div><a href="images/Magnifier.png" class="image-popup"><img src="images/Magnifier.png" alt="Magnifier 方法框架" width="100%"></a></div></div>
 <div class='paper-box-text' markdown="1">
 
 [Magnifier: A Chiplet Feature-Aware Test Case Generation Method for Deep Learning Accelerators](https://ieeexplore.ieee.org/document/10836817). TCAD 2025.
@@ -59,7 +59,7 @@ You can view my Chinese resume here: [Resume](./_pages/resume-boyuli.pdf)
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">MultiRuler</div><img src='images/MultiRuler.png' alt="sym" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">MultiRuler</div><a href="images/MultiRuler.png" class="image-popup"><img src="images/MultiRuler.png" alt="MultiRuler 方法框架" width="100%"></a></div></div>
 <div class='paper-box-text' markdown="1">
 
 [MultiRuler: A Multi-Dimensional Resource Modeling Method for Embedded Intelligent Systems of Autonomous Driving](https://ieeexplore.ieee.org/document/10354401). TVT 2024.
@@ -79,7 +79,7 @@ Youqing Xu, **Boyu Li**(co-first author), Zongwei Zhu*, et al.
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Arch2End</div><img src='images/Arch2end.png' alt="sym" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Arch2End</div><a href="images/Arch2end.png" class="image-popup"><img src="images/Arch2end.png" alt="Arch2End 方法框架" width="100%"></a></div></div>
 <div class='paper-box-text' markdown="1">
 
 [Arch2End: Two-Stage Unified System-Level Modeling for Heterogeneous Intelligent Devices](https://ieeexplore.ieee.org/document/10745851). TCAD 2025.
@@ -98,7 +98,7 @@ Weihong Liu, Zongwei Zhu*, **Boyu Li**, et al.
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">MP3</div><img src='images/MP3.png' alt="sym" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">MP3</div><a href="images/MP3.png" class="image-popup"><img src="images/MP3.png" alt="MP3 方法框架" width="100%"></a></div></div>
 <div class='paper-box-text' markdown="1">
 
 [MP3: Mixed-Precision Pipeline Parallelism Framework for Heterogeneous Edge Devices](https://ieeexplore.ieee.org/abstract/document/11389853). TCAD 2026.
@@ -115,7 +115,7 @@ Yi Xiong, Weihong Liu, **Boyu Li**, et al.
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">BP-FedPEFT</div><img src='images/BP-FedPEFT.png' alt="sym" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">BP-FedPEFT</div><a href="images/BP-FedPEFT.png" class="image-popup"><img src="images/BP-FedPEFT.png" alt="BP-FedPEFT 方法框架" width="100%"></a></div></div>
 <div class='paper-box-text' markdown="1">
 
 [Memory-Efficient Federated Fine-Tuning of LLMs via Block-wise Progressive Training](https://neurips.cc/Conferences/2026/Schedule?showEvent=149884). NeurIPS 2026.
@@ -130,7 +130,7 @@ Qianyue Cao, Zongwei Zhu*, **Boyu Li**, et al.
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">PPFL</div><img src='images/PPFL.png' alt="sym" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">PPFL</div><a href="images/PPFL.png" class="image-popup"><img src="images/PPFL.png" alt="PPFL 方法框架" width="100%"></a></div></div>
 <div class='paper-box-text' markdown="1">
 
 [PPFL: A Parameter Behavior-Driven Plug-in Personalization Engine for Federated Learning](https://ojs.aaai.org/index.php/AAAI/article/view/39073). AAAI 2026.
@@ -145,7 +145,7 @@ Qianyue Cao, Zongwei Zhu*, Zirui Lian, Rui Zhang, **Boyu Li**, et al.
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">AsyncGrid</div><img src='images/AsyncGrid.png' alt="sym" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">AsyncGrid</div><a href="images/AsyncGrid.png" class="image-popup"><img src="images/AsyncGrid.png" alt="AsyncGrid 方法框架" width="100%"></a></div></div>
 <div class='paper-box-text' markdown="1">
 
 [AsyncGrid: An Intra- and Inter-Layer Asynchronous Hybrid Parallelism System for Responsive Edge LLM Inference](https://ieeexplore.ieee.org/abstract/document/11389853). TCAD 2026.
@@ -161,7 +161,7 @@ Yi Xiong, Rui Zhang, Yulong Zu, Weihong Liu, Zongwei Zhu*, Jiawei Geng, **Boyu L
 </div>
 </div>
 
-<div class='paper-box'><div class='paper-box-image'><div><div class="badge">PowerLens</div><img src='images/PowerLens.png' alt="sym" width="100%"></div></div>
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">PowerLens</div><a href="images/PowerLens.png" class="image-popup"><img src="images/PowerLens.png" alt="PowerLens 方法框架" width="100%"></a></div></div>
 <div class='paper-box-text' markdown="1">
 
 [PowerLens: An Adaptive DVFS Framework for Optimizing Energy Efficiency in Deep Neural Networks](https://dl.acm.org/doi/abs/10.1145/3649329.3655956). DAC 2024.
