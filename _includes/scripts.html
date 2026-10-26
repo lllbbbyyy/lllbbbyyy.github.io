@@ -4,13 +4,16 @@
 {% include fetch_google_scholar_stats.html %}
 
 <style>
+/* 使用普通鼠标指针。 */
 .author__avatar a.image-popup,
 .author__avatar a.image-popup img,
 .paper-box-image a.image-popup,
-.paper-box-image a.image-popup img {
-  cursor: zoom-in !important;
+.paper-box-image a.image-popup img,
+.mfp-img {
+  cursor: default !important;
 }
 
+/* 大图缩放样式。 */
 .mfp-img {
   transform-origin: center;
   transition: transform 0.08s linear;
@@ -30,7 +33,7 @@ $(function () {
     $(".mfp-img").css("transform", "");
   }
 
-  // 给头像和论文图片链接启用大图预览。
+  // 为头像和论文图片链接启用大图预览。
   $(".author__avatar a, .paper-box-image a")
     .filter(function () {
       return $(this).find("img").length > 0;
@@ -54,6 +57,15 @@ $(function () {
     }
   });
 
+  // 拦截大图上的单击，阻止主题切换图片或关闭弹窗。
+  // 双击恢复和左右箭头切换不受影响。
+  document.addEventListener("click", function (event) {
+    if (!event.target.closest(".mfp-img")) return;
+
+    event.preventDefault();
+    event.stopImmediatePropagation();
+  }, true);
+
   // 在大图上滚动鼠标滚轮进行缩放。
   document.addEventListener("wheel", function (event) {
     var image = event.target.closest(".mfp-img");
@@ -70,6 +82,7 @@ $(function () {
   // 双击大图恢复初始比例。
   $(document).on("dblclick", ".mfp-img", function (event) {
     event.preventDefault();
+    event.stopPropagation();
     resetImageZoom();
   });
 });
