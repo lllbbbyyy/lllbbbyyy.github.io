@@ -4,13 +4,29 @@
 {% include fetch_google_scholar_stats.html %}
 
 <style>
-/* 使用普通鼠标指针。 */
-.author__avatar a.image-popup,
-.author__avatar a.image-popup img,
-.paper-box-image a.image-popup,
-.paper-box-image a.image-popup img,
-.mfp-img {
+/* 头像和论文缩略图使用普通鼠标指针。 */
+.author__avatar a,
+.author__avatar img,
+.paper-box-image a,
+.paper-box-image img,
+.mfp-zoom {
   cursor: default !important;
+}
+
+/* 覆盖插件自带的放大镜指针，包括弹窗背景。 */
+body.mfp-zoom-out-cur,
+.mfp-wrap,
+.mfp-wrap .mfp-container,
+.mfp-wrap .mfp-content,
+.mfp-wrap .mfp-figure,
+.mfp-wrap .mfp-img {
+  cursor: default !important;
+}
+
+/* 关闭按钮和切换按钮使用手形指针。 */
+.mfp-wrap .mfp-close,
+.mfp-wrap .mfp-arrow {
+  cursor: pointer !important;
 }
 
 /* 大图缩放样式。 */
@@ -40,16 +56,19 @@ $(function () {
     })
     .addClass("image-popup");
 
+  // 更新主题原有的图片弹窗配置。
   $(".image-popup").magnificPopup({
     type: "image",
     closeOnContentClick: false,
     closeOnBgClick: true,
     enableEscapeKey: true,
+
     gallery: {
       enabled: true,
       navigateByImgClick: false,
       preload: [0, 1]
     },
+
     callbacks: {
       open: resetImageZoom,
       change: resetImageZoom,
@@ -57,8 +76,8 @@ $(function () {
     }
   });
 
-  // 拦截大图上的单击，阻止主题切换图片或关闭弹窗。
-  // 双击恢复和左右箭头切换不受影响。
+  // 阻止主题在单击大图时切换图片或关闭弹窗。
+  // 保留双击恢复和左右箭头切换功能。
   document.addEventListener("click", function (event) {
     if (!event.target.closest(".mfp-img")) return;
 
