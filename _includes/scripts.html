@@ -1,4 +1,4 @@
-<script src="assets/js/main.min.js"></script>
+<script src="{{ '/assets/js/main.min.js' | relative_url }}"></script>
 
 {% include analytics.html %}
 {% include fetch_google_scholar_stats.html %}
@@ -11,7 +11,6 @@
   cursor: zoom-in !important;
 }
 
-/* 大图按浏览器窗口适配，并允许以中心为基准缩放。 */
 .mfp-img {
   transform-origin: center;
   transition: transform 0.08s linear;
@@ -31,10 +30,31 @@ $(function () {
     $(".mfp-img").css("transform", "");
   }
 
-  // 图片切换或关闭时恢复缩放比例。
-  $(document).on("mfpChange mfpClose", resetImageZoom);
+  // 给头像和论文图片链接启用大图预览。
+  $(".author__avatar a, .paper-box-image a")
+    .filter(function () {
+      return $(this).find("img").length > 0;
+    })
+    .addClass("image-popup");
 
-  // 在弹窗中的图片上滚动鼠标滚轮进行缩放。
+  $(".image-popup").magnificPopup({
+    type: "image",
+    closeOnContentClick: false,
+    closeOnBgClick: true,
+    enableEscapeKey: true,
+    gallery: {
+      enabled: true,
+      navigateByImgClick: false,
+      preload: [0, 1]
+    },
+    callbacks: {
+      open: resetImageZoom,
+      change: resetImageZoom,
+      close: resetImageZoom
+    }
+  });
+
+  // 在大图上滚动鼠标滚轮进行缩放。
   document.addEventListener("wheel", function (event) {
     var image = event.target.closest(".mfp-img");
     if (!image) return;
@@ -47,7 +67,7 @@ $(function () {
     image.style.transform = "scale(" + scale + ")";
   }, { passive: false });
 
-  // 双击大图恢复原始显示比例。
+  // 双击大图恢复初始比例。
   $(document).on("dblclick", ".mfp-img", function (event) {
     event.preventDefault();
     resetImageZoom();
