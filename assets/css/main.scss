@@ -107,3 +107,8 @@ h1:before, .anchor:before {
     background-color: #00369f;
     font-size: .8em;
 }
+
+.author__avatar a,
+.paper-box-image a {
+  cursor: zoom-in;
+}
