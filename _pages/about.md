@@ -23,9 +23,9 @@ I received the B.E. degree in Computer Science and Technology from [Tongji Unive
 I was the recipient of the National Scholarship for Postgraduate at University of Science and Technology of China in 2023 and hold 1 Chinese invention patents.
 
 My research interests include:  
-- **[AI Accelerators](https://scholar.google.com/citations?view_op=search_authors&mauthors=label:AI_Accelerators)**
-- **[AI Compilers](https://scholar.google.com/citations?view_op=search_authors&mauthors=label:AI_Compilers)**
-- **[Agents for Systems](https://scholar.google.com/citations?view_op=search_authors&mauthors=label:Agents_for_Systems)**
+- **[AI Accelerators](https://scholar.google.com/scholar?q=AI+accelerators)**
+- **[AI Compilers](https://scholar.google.com/scholar?q=AI+compilers)**
+- **[Agents for Systems](https://scholar.google.com/scholar?q=LLM+agents+for+computer+systems)**
 
 You can view my Chinese resume here: [Resume](./_pages/resume-boyuli.pdf)
 
