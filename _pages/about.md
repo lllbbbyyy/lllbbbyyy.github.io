@@ -32,6 +32,7 @@ You can view my Chinese resume here: [Resume](./_pages/resume-boyuli.pdf)
 
 # 🔥 News
 
+- *2026.11*: &nbsp;🎉🎉 A paper is accepted by the IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems (TCAD). _(CCF A)_
 - *2026.09*: &nbsp;🎉🎉 A paper is accepted by the Fortieth Annual Conference on Neural Information Processing Systems (NeurIPS). _(CCF A)_
 - *2026.02*: &nbsp;🎉🎉 A paper is accepted by the IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems (TCAD). _(CCF A)_
 - *2025.11*: &nbsp;🎉🎉 A paper is accepted by the the Fortieth AAAI Conference on Artificial Intelligence (AAAI). _(CCF A)_
@@ -43,6 +44,24 @@ You can view my Chinese resume here: [Resume](./_pages/resume-boyuli.pdf)
 - *2023.10*: &nbsp;🎉🎉 Received the National Scholarship for Postgraduate.
 
 # 📝 Publications 
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">Compass</div><a href="images/Compass.png" class="image-popup"><img src="images/Compass.png" alt="Compass 方法框架" width="100%"></a></div></div>
+<div class='paper-box-text' markdown="1">
+
+[Compass: Co-Exploration of Mapping and Hardware for Heterogeneous Multi-Chiplet Accelerators Targeting LLM Inference Service Workloads](https://ieeexplore.ieee.org/document/10836817). TCAD 2025.
+
+**Boyu Li**, Zongwei Zhu*, et al. 
+
+**Keywords**
+- Chiplet
+- LLM Inference Service
+- Design Space Exploration
+- Mapping Hardware Co-optimization
+
+</div>
+</div>
+
+
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">Magnifier</div><a href="images/Magnifier.png" class="image-popup"><img src="images/Magnifier.png" alt="Magnifier 方法框架" width="100%"></a></div></div>
 <div class='paper-box-text' markdown="1">
 
@@ -157,6 +176,22 @@ Yi Xiong, Rui Zhang, Yulong Zu, Weihong Liu, Zongwei Zhu*, Jiawei Geng, **Boyu L
 - Edge Computing
 - Model Parallelism
 - Response Latency
+
+</div>
+</div>
+
+
+<div class='paper-box'><div class='paper-box-image'><div><div class="badge">eLLM</div><a href="images/eLLM.png" class="image-popup"><img src="images/eLLM.png" alt="eLLM 方法框架" width="100%"></a></div></div>
+<div class='paper-box-text' markdown="1">
+
+[eLLM: Elastic Memory Management Framework for Efficient LLM Serving](https://dl.acm.org/doi/10.1145/3770743.3804144). DAC 2026.
+
+Jiale Xu, Yi Xiong, Rui Zhang, Cong Guo, Zihan Liu, Yangjie Zhou, Weiming Hu, Hao Wu, **Boyu Li**, et al. 
+
+**Keywords**
+- LLM Serving
+- Memory Management
+- Memory Virtualization
 
 </div>
 </div>
