@@ -48,7 +48,7 @@ You can view my Chinese resume here: [Resume](./_pages/resume-boyuli.pdf)
 <div class='paper-box'><div class='paper-box-image'><div><div class="badge">Compass</div><a href="images/Compass.png" class="image-popup"><img src="images/Compass.png" alt="Compass 方法框架" width="100%"></a></div></div>
 <div class='paper-box-text' markdown="1">
 
-[Compass: Co-Exploration of Mapping and Hardware for Heterogeneous Multi-Chiplet Accelerators Targeting LLM Inference Service Workloads](https://ieeexplore.ieee.org/document/10836817). TCAD 2025.
+[Compass: Co-Exploration of Mapping and Hardware for Heterogeneous Multi-Chiplet Accelerators Targeting LLM Inference Service Workloads](https://ieeexplore.ieee.org/document/11793209). TCAD 2025.
 
 **Boyu Li**, Zongwei Zhu*, et al. 
 
