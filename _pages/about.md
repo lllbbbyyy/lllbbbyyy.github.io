@@ -34,6 +34,7 @@ You can view my Chinese resume here: [Resume](./_pages/resume-boyuli.pdf)
 
 - *2026.11*: &nbsp;🎉🎉 A paper is accepted by the IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems (TCAD). _(CCF A)_
 - *2026.09*: &nbsp;🎉🎉 A paper is accepted by the Fortieth Annual Conference on Neural Information Processing Systems (NeurIPS). _(CCF A)_
+- *2026.02*: &nbsp;🎉🎉 A paper is accepted by the Proceedings of the 63st ACM/IEEE Design Automation Conference (DAC). _(CCF A)_
 - *2026.02*: &nbsp;🎉🎉 A paper is accepted by the IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems (TCAD). _(CCF A)_
 - *2025.11*: &nbsp;🎉🎉 A paper is accepted by the the Fortieth AAAI Conference on Artificial Intelligence (AAAI). _(CCF A)_
 - *2025.10*: &nbsp;🎉🎉 A paper is accepted by the IEEE Transactions on Computer-Aided Design of Integrated Circuits and Systems (TCAD). _(CCF A)_
